@@ -14,31 +14,32 @@ export function CartProvider({ children }) {
 
   const addToCart = (product, quantity = 1) => {
     const qty = Number(quantity);
+    const cartId = `${product.id}-${product.size || 'M'}`;
     setCartItems(prev => {
-      const existing = prev.find(item => item.id == product.id);
+      const existing = prev.find(item => item.cartId === cartId);
       if (existing) {
         return prev.map(item => 
-          item.id == product.id 
+          item.cartId === cartId 
             ? { ...item, quantity: Number(item.quantity) + qty }
             : item
         );
       }
-      return [...prev, { ...product, quantity: qty }];
+      return [...prev, { ...product, quantity: qty, cartId }];
     });
   };
 
-  const removeFromCart = (productId) => {
-    setCartItems(prev => prev.filter(item => item.id != productId));
+  const removeFromCart = (cartId) => {
+    setCartItems(prev => prev.filter(item => item.cartId !== cartId));
   };
 
-  const updateQuantity = (productId, quantity) => {
+  const updateQuantity = (cartId, quantity) => {
     const qty = Number(quantity);
     if (qty <= 0) {
-      removeFromCart(productId);
+      removeFromCart(cartId);
       return;
     }
     setCartItems(prev => prev.map(item => 
-      item.id == productId ? { ...item, quantity: qty } : item
+      item.cartId === cartId ? { ...item, quantity: qty } : item
     ));
   };
 

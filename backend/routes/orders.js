@@ -13,7 +13,16 @@ router.get('/', async (req, res) => {
     
     const { data, error } = await supabase
       .from('orders')
-      .select('*')
+      .select(`
+        *,
+        order_items (
+          *,
+          products (
+            name,
+            image_url
+          )
+        )
+      `)
       .eq('user_id', user_id)
       .order('created_at', { ascending: false });
       

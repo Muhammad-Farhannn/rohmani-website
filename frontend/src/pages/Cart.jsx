@@ -32,7 +32,7 @@ export default function Cart() {
             {/* Product List Area */}
             <div className="lg:col-span-8 space-y-8 md:space-y-12">
               {cartItems.map((item) => (
-                <div key={item.id} className="flex flex-row gap-4 sm:gap-8 pb-8 sm:pb-12 border-b border-stone-200">
+                <div key={item.cartId || item.id} className="flex flex-row gap-4 sm:gap-8 pb-8 sm:pb-12 border-b border-stone-200">
                   <div className="w-24 sm:w-48 aspect-[3/4] bg-stone-100 overflow-hidden flex-shrink-0">
                     <img 
                       className="w-full h-full object-cover" 
@@ -45,7 +45,7 @@ export default function Cart() {
                       <div>
                         <h3 className="font-headline-sm text-headline-sm text-on-surface mb-2">{item.name}</h3>
                         <p className="font-label-caps text-label-caps text-on-surface-variant uppercase mb-4">
-                          {item.category} | {item.color || 'Artisanal Blend'}
+                          {item.category} | {item.color || 'Artisanal Blend'} | Size: {item.size || 'M'}
                         </p>
                       </div>
                       <div className="font-headline-sm text-headline-sm text-on-surface">PKR {item.price.toLocaleString()}</div>
@@ -53,21 +53,21 @@ export default function Cart() {
                     <div className="flex justify-between items-center mt-8">
                       <div className="flex items-center border border-stone-300 px-4 py-2 gap-6">
                         <button 
-                          onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                          onClick={() => updateQuantity(item.cartId || item.id, item.quantity - 1)}
                           className="hover:text-primary transition-colors"
                         >
                           <span className="material-symbols-outlined text-sm">remove</span>
                         </button>
                         <span className="font-body-md">{item.quantity}</span>
                         <button 
-                          onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                          onClick={() => updateQuantity(item.cartId || item.id, item.quantity + 1)}
                           className="hover:text-primary transition-colors"
                         >
                           <span className="material-symbols-outlined text-sm">add</span>
                         </button>
                       </div>
                       <button 
-                        onClick={() => removeFromCart(item.id)}
+                        onClick={() => removeFromCart(item.cartId || item.id)}
                         className="text-stone-400 hover:text-error transition-colors flex items-center gap-2"
                       >
                         <span className="material-symbols-outlined text-xl">delete</span>

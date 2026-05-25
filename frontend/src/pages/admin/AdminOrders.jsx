@@ -19,7 +19,16 @@ export default function AdminOrders() {
       
       const { data, error } = await supabase
         .from('orders')
-        .select('*')
+        .select(`
+          *,
+          order_items (
+            *,
+            products (
+              name,
+              image_url
+            )
+          )
+        `)
         .order('created_at', { ascending: false });
 
       if (error) throw error;
@@ -61,6 +70,7 @@ export default function AdminOrders() {
                 <th className="px-6 py-4 text-xs font-label-caps text-on-surface-variant uppercase tracking-wider">Order ID</th>
                 <th className="px-6 py-4 text-xs font-label-caps text-on-surface-variant uppercase tracking-wider">Customer</th>
                 <th className="px-6 py-4 text-xs font-label-caps text-on-surface-variant uppercase tracking-wider">Date</th>
+                <th className="px-6 py-4 text-xs font-label-caps text-on-surface-variant uppercase tracking-wider">Items</th>
                 <th className="px-6 py-4 text-xs font-label-caps text-on-surface-variant uppercase tracking-wider">Total Amount</th>
                 <th className="px-6 py-4 text-xs font-label-caps text-on-surface-variant uppercase tracking-wider">Status</th>
                 <th className="px-6 py-4 text-xs font-label-caps text-on-surface-variant uppercase tracking-wider text-right">Actions</th>
@@ -78,6 +88,22 @@ export default function AdminOrders() {
                   <td className="px-6 py-4 text-sm text-on-surface-variant">
                     {new Date(order.created_at).toLocaleDateString()}
                   </td>
+                  <td className="px-6 py-4 text-sm text-on-surface-variant">
+                    {order.order_items && order.order_items.length > 0 ? (
+                      <div className="flex flex-col gap-2">
+                        {order.order_items.map(item => (
+                          <div key={item.id} className="flex items-center gap-2">
+                            {item.products?.image_url && (
+                              <img src={item.products.image_url} alt={item.products.name} className="w-8 h-10 object-cover rounded" />
+                            )}
+                            <span className="text-xs">{item.products?.name || 'Unknown'} (x{item.quantity})</span>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <span className="text-xs text-on-surface-variant opacity-70">No items details</span>
+                    )}
+                  </td>
                   <td className="px-6 py-4 text-sm font-semibold text-primary">
                     PKR {order.total_amount?.toLocaleString()}
                   </td>
@@ -92,7 +118,7 @@ export default function AdminOrders() {
                 </tr>
               )) : (
                 <tr>
-                  <td colSpan="6" className="px-6 py-10 text-center text-on-surface-variant">No orders found</td>
+                  <td colSpan="7" className="px-6 py-10 text-center text-on-surface-variant">No orders found</td>
                 </tr>
               )}
             </tbody>

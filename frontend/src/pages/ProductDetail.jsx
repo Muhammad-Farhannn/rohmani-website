@@ -13,6 +13,7 @@ export default function ProductDetail() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [quantity, setQuantity] = useState(1);
+  const [selectedSize, setSelectedSize] = useState('M');
   const [isAdded, setIsAdded] = useState(false);
   const [relatedProducts, setRelatedProducts] = useState([]);
 
@@ -44,7 +45,7 @@ export default function ProductDetail() {
 
   const handleAddToCart = () => {
     if (product) {
-      addToCart(product, quantity);
+      addToCart({ ...product, size: selectedSize }, quantity);
       setIsAdded(true);
       setTimeout(() => setIsAdded(false), 2000);
     }
@@ -96,7 +97,7 @@ export default function ProductDetail() {
               </div>
             </div>
             <div className="flex-1 aspect-[3/4] md:aspect-auto overflow-hidden relative group">
-              <img className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 cursor-zoom-in" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcECAT-p8C2BiUQTDJhDdM-0HViJtyrWmYehFEjuhMPQoXEEbJYh959QcEcSvYsHFzTUu79cD5SQflrHgygVYDYq2OJOMzJIlDYHTQn-2APJ5a-Yawm9auX-BmLr1XahjQsazueOMFoL24AHQCnHt8NKrXQOGE-Um0y10OedjwlqGJLtskKeYY7_qagAxgflnb6eYxWns2fWHLSLq9SzcyikZft_MhUnXH7sv_culH6qVggIe3DkmAQdRmeeN6Puw_Ck5w2-a-rP2H"/>
+              <img className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 cursor-zoom-in" src={product.image_url || "https://lh3.googleusercontent.com/aida-public/AB6AXuCcECAT-p8C2BiUQTDJhDdM-0HViJtyrWmYehFEjuhMPQoXEEbJYh959QcEcSvYsHFzTUu79cD5SQflrHgygVYDYq2OJOMzJIlDYHTQn-2APJ5a-Yawm9auX-BmLr1XahjQsazueOMFoL24AHQCnHt8NKrXQOGE-Um0y10OedjwlqGJLtskKeYY7_qagAxgflnb6eYxWns2fWHLSLq9SzcyikZft_MhUnXH7sv_culH6qVggIe3DkmAQdRmeeN6Puw_Ck5w2-a-rP2H"}/>
               <div className="absolute bottom-6 right-6 flex flex-col gap-2">
                 <button className="w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center hover:bg-white transition-colors">
                   <span className="material-symbols-outlined text-stone-700">zoom_in</span>
@@ -131,11 +132,15 @@ export default function ProductDetail() {
                   <button className="text-stone-400 text-[10px] underline tracking-widest hover:text-stone-900 transition-colors">SIZE GUIDE</button>
                 </div>
                 <div className="grid grid-cols-5 gap-2">
-                  <button className="py-3 border border-stone-200 text-xs tracking-widest hover:border-stone-900 transition-colors uppercase">XS</button>
-                  <button className="py-3 border border-stone-200 text-xs tracking-widest hover:border-stone-900 transition-colors uppercase">S</button>
-                  <button className="py-3 border border-stone-900 bg-stone-900 text-white text-xs tracking-widest uppercase">M</button>
-                  <button className="py-3 border border-stone-200 text-xs tracking-widest hover:border-stone-900 transition-colors uppercase">L</button>
-                  <button className="py-3 border border-stone-200 text-xs tracking-widest hover:border-stone-900 transition-colors uppercase">XL</button>
+                  {['XS', 'S', 'M', 'L', 'XL'].map((size) => (
+                    <button 
+                      key={size}
+                      onClick={() => setSelectedSize(size)}
+                      className={`py-3 border text-xs tracking-widest uppercase transition-colors ${selectedSize === size ? 'border-stone-900 bg-stone-900 text-white' : 'border-stone-200 hover:border-stone-900'}`}
+                    >
+                      {size}
+                    </button>
+                  ))}
                 </div>
               </div>
               <div className="flex gap-4">

@@ -304,6 +304,7 @@ Please ensure your Supabase 'profiles' table has an 'address' column.`);
                       <tr className="border-b border-stone-200">
                         <th className="pb-6 font-label-caps text-[10px] text-stone-400 uppercase tracking-widest">Order ID</th>
                         <th className="pb-6 font-label-caps text-[10px] text-stone-400 uppercase tracking-widest">Date</th>
+                        <th className="pb-6 font-label-caps text-[10px] text-stone-400 uppercase tracking-widest">Items</th>
                         <th className="pb-6 font-label-caps text-[10px] text-stone-400 uppercase tracking-widest">Status</th>
                         <th className="pb-6 font-label-caps text-[10px] text-stone-400 uppercase tracking-widest">Total</th>
                         <th className="pb-6 font-label-caps text-[10px] text-stone-400 uppercase tracking-widest text-right">Action</th>
@@ -314,6 +315,22 @@ Please ensure your Supabase 'profiles' table has an 'address' column.`);
                         <tr key={order.id} className="border-b border-stone-50 group hover:bg-stone-50/50 transition-colors">
                           <td className="py-4 md:py-8 font-serif">#RAT-{order.id}</td>
                           <td className="py-4 md:py-8 font-body-md">{new Date(order.created_at).toLocaleDateString()}</td>
+                          <td className="py-4 md:py-8">
+                            {order.order_items && order.order_items.length > 0 ? (
+                              <div className="flex flex-col gap-2">
+                                {order.order_items.map(item => (
+                                  <div key={item.id} className="flex items-center gap-2">
+                                    {item.products?.image_url && (
+                                      <img src={item.products.image_url} alt={item.products.name} className="w-8 h-10 object-cover" />
+                                    )}
+                                    <span className="text-xs">{item.products?.name || 'Unknown'} (x{item.quantity})</span>
+                                  </div>
+                                ))}
+                              </div>
+                            ) : (
+                              <span className="text-xs text-stone-400">No items details</span>
+                            )}
+                          </td>
                           <td className="py-4 md:py-8">
                             <span className={`px-3 py-1 text-[10px] font-label-caps uppercase rounded-full ${
                               order.status === 'delivered' ? 'bg-green-50 text-green-700' : 'bg-stone-100 text-stone-600'

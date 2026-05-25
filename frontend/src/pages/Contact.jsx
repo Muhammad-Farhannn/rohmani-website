@@ -66,8 +66,8 @@ export default function Contact() {
                 <div>
                   <h4 className="font-label-caps text-xs text-stone-400 uppercase tracking-widest mb-2">Our Atelier</h4>
                   <p className="font-body-md text-stone-800">
-                    45 Heritage Square, Gulberg III<br />
-                    Lahore, Punjab 54000, Pakistan
+                    House No 198, Motorway valley Sargodha Road, Faisalabad<br />
+                    Faisalabad, Punjab 38000, Pakistan
                   </p>
                 </div>
               </div>
@@ -76,7 +76,7 @@ export default function Contact() {
                 <span className="material-symbols-outlined text-primary text-3xl">mail</span>
                 <div>
                   <h4 className="font-label-caps text-xs text-stone-400 uppercase tracking-widest mb-2">Email Us</h4>
-                  <p className="font-body-md text-stone-800">concierge@rohmani.com</p>
+                  <p className="font-body-md text-stone-800">rohmanicloth@gmail.com</p>
                 </div>
               </div>
 
@@ -84,7 +84,7 @@ export default function Contact() {
                 <span className="material-symbols-outlined text-primary text-3xl">call</span>
                 <div>
                   <h4 className="font-label-caps text-xs text-stone-400 uppercase tracking-widest mb-2">Call Us</h4>
-                  <p className="font-body-md text-stone-800">+92 (042) 111-ROHMANI</p>
+                  <p className="font-body-md text-stone-800">0300-8625051</p>
                 </div>
               </div>
             </div>
@@ -94,7 +94,7 @@ export default function Contact() {
               <div className="flex gap-6">
                 <a href="#" className="text-stone-600 hover:text-primary transition-colors uppercase font-label-caps text-xs">Instagram</a>
                 <a href="#" className="text-stone-600 hover:text-primary transition-colors uppercase font-label-caps text-xs">Facebook</a>
-                <a href="#" className="text-stone-600 hover:text-primary transition-colors uppercase font-label-caps text-xs">Pinterest</a>
+                <a href="#" className="text-stone-600 hover:text-primary transition-colors uppercase font-label-caps text-xs">TikTok</a>
               </div>
             </div>
           </div>
@@ -111,45 +111,45 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="space-y-8">
                 <div className="space-y-2">
                   <label className="font-label-caps text-[10px] text-stone-400 uppercase tracking-widest">Your Name</label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     required
                     className="w-full border-b border-stone-200 py-3 focus:border-primary focus:ring-0 outline-none transition-colors font-body-md"
                     value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: e.target.value})}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   />
                 </div>
                 <div className="space-y-2">
                   <label className="font-label-caps text-[10px] text-stone-400 uppercase tracking-widest">Email Address</label>
-                  <input 
-                    type="email" 
+                  <input
+                    type="email"
                     required
                     className="w-full border-b border-stone-200 py-3 focus:border-primary focus:ring-0 outline-none transition-colors font-body-md"
                     value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   />
                 </div>
                 <div className="space-y-2">
                   <label className="font-label-caps text-[10px] text-stone-400 uppercase tracking-widest">Subject</label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     required
                     className="w-full border-b border-stone-200 py-3 focus:border-primary focus:ring-0 outline-none transition-colors font-body-md"
                     value={formData.subject}
-                    onChange={(e) => setFormData({...formData, subject: e.target.value})}
+                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                   />
                 </div>
                 <div className="space-y-2">
                   <label className="font-label-caps text-[10px] text-stone-400 uppercase tracking-widest">Your Message</label>
-                  <textarea 
+                  <textarea
                     rows="4"
                     required
                     className="w-full border-b border-stone-200 py-3 focus:border-primary focus:ring-0 outline-none transition-colors font-body-md resize-none"
                     value={formData.message}
-                    onChange={(e) => setFormData({...formData, message: e.target.value})}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   ></textarea>
                 </div>
-                <button 
+                <button
                   type="submit"
                   disabled={loading}
                   className="w-full bg-primary text-white py-5 font-label-caps text-label-caps uppercase tracking-[0.2em] hover:bg-stone-900 transition-colors disabled:opacity-50"

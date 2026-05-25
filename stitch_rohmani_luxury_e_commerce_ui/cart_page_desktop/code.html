@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#615e57",
+                    "inverse-primary": "#cbc6bd",
+                    "surface-tint": "#615e57",
+                    "on-secondary-fixed": "#231919",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed": "#241a00",
+                    "inverse-on-surface": "#f2f0f0",
+                    "error": "#ba1a1a",
+                    "surface-dim": "#dbd9d9",
+                    "secondary-fixed-dim": "#d5c2c2",
+                    "surface-bright": "#fbf9f8",
+                    "tertiary": "#735c00",
+                    "secondary-container": "#eedbdb",
+                    "inverse-surface": "#303030",
+                    "on-error-container": "#93000a",
+                    "on-surface": "#1b1c1c",
+                    "on-secondary-fixed-variant": "#504444",
+                    "on-surface-variant": "#49463f",
+                    "secondary": "#695b5b",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "secondary-fixed": "#f1dede",
+                    "surface-container-highest": "#e4e2e2",
+                    "on-secondary-container": "#6d5f5f",
+                    "on-tertiary-fixed-variant": "#574500",
+                    "outline-variant": "#cbc6bc",
+                    "tertiary-container": "#ffeec6",
+                    "on-primary-fixed-variant": "#494640",
+                    "tertiary-fixed-dim": "#e9c349",
+                    "on-primary-container": "#706c65",
+                    "on-background": "#1b1c1c",
+                    "on-primary": "#ffffff",
+                    "primary-fixed": "#e7e2d9",
+                    "surface-container": "#efeded",
+                    "primary-container": "#f5efe6",
+                    "outline": "#7b776e",
+                    "on-tertiary": "#ffffff",
+                    "surface-variant": "#e4e2e2",
+                    "background": "#fbf9f8",
+                    "error-container": "#ffdad6",
+                    "primary-fixed-dim": "#cbc6bd",
+                    "tertiary-fixed": "#ffe088",
+                    "surface": "#fbf9f8",
+                    "on-primary-fixed": "#1d1b16",
+                    "surface-container-low": "#f5f3f3",
+                    "surface-container-high": "#eae8e7",
+                    "on-tertiary-container": "#846900"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-edge": "64px",
+                    "unit-sm": "8px",
+                    "element-gap": "16px",
+                    "unit-lg": "32px",
+                    "section-gap": "120px",
+                    "container-max": "1440px",
+                    "gutter": "24px",
+                    "unit-xs": "4px",
+                    "unit-md": "16px"
+            },
+            "fontFamily": {
+                    "body-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "headline-md": ["Noto Serif"],
+                    "headline-sm": ["Noto Serif"],
+                    "display-lg": ["Noto Serif"],
+                    "label-caps": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fbf9f8;
+            color: #1b1c1c;
+        }
+    </style>
+</head>
+<body class="font-body-md bg-background">
+<!-- TopNavBar -->
+<nav class="sticky top-0 w-full z-50 bg-[#FCF9F6]/95 backdrop-blur-sm border-b-[0.5px] border-stone-200 shadow-sm shadow-stone-200/10">
+<div class="flex justify-between items-center w-full px-8 md:px-16 py-6 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-8">
+<a class="text-2xl font-serif tracking-[0.2em] uppercase text-stone-900" href="#">Rohmani By Bin Arif Textiles</a>
+</div>
+<div class="hidden md:flex items-center gap-10 font-serif tracking-widest uppercase text-xs">
+<a class="text-stone-500 hover:text-stone-900 transition-colors duration-500" href="#">Home</a>
+<a class="text-stone-500 hover:text-stone-900 transition-colors duration-500" href="#">New Arrivals</a>
+<a class="text-stone-500 hover:text-stone-900 transition-colors duration-500" href="#">Collections</a>
+<a class="text-stone-500 hover:text-stone-900 transition-colors duration-500" href="#">Sale</a>
+<a class="text-stone-500 hover:text-stone-900 transition-colors duration-500" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="hover:opacity-70 transition-opacity duration-300">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="hover:opacity-70 transition-opacity duration-300">
+<span class="material-symbols-outlined">person</span>
+</button>
+<button class="hover:opacity-70 transition-opacity duration-300 relative">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="absolute -top-2 -right-2 bg-primary text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">3</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="max-w-screen-2xl mx-auto px-8 md:px-24 py-20">
+<!-- Breadcrumb / Header -->
+<div class="mb-16">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-4">Your Shopping Bag</h1>
+<p class="font-body-md text-on-surface-variant max-w-lg">Review your selection of artisanal heritage textiles, curated for timeless elegance.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-20">
+<!-- Product List Area -->
+<div class="lg:col-span-8 space-y-12">
+<!-- Item 1 -->
+<div class="flex flex-col md:flex-row gap-8 pb-12 border-b border-stone-200">
+<div class="w-full md:w-48 aspect-[3/4] bg-stone-100 overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A close-up shot of a luxurious, hand-woven cream textile with intricate gold embroidery patterns, draped elegantly in a high-fashion studio setting. The lighting is soft and directional, highlighting the rich textures and delicate threadwork characteristic of luxury Pakistani heritage fashion. The overall atmosphere is quiet, sophisticated, and minimalist." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCC7JCGrW5KtSkrHFdDvBsR05HiCP6EgwYVturNMCZnvHaTtlARk9500jtmc0_bAju9k7ar-Y_8OXJgN5FMI3TcVN5okJQjUdaFh-__H8rYPgiaJYuDteU2KiQumXQDqmkrzwQkDybeyXYHGJWuKOxqa3O3pW2Xf9KD1qfoPkjyNtXPpqriDWac8cW-bBrlv3Y6-5ATTfSrgdO5-xchZUp_45W4bamXvxuAyLTEcf_TmYY6C8Ia-32qBOt5vJN3A0PuoKpLd9yiklJ8"/>
+</div>
+<div class="flex-grow flex flex-col justify-between py-2">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Signature Embroidered Pashmina</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-4">Style: Classic Heritage | Color: Ivory Gold</p>
+<div class="font-label-caps text-label-caps text-primary uppercase">Size: One Size</div>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-surface">PKR 45,000</div>
+</div>
+<div class="flex justify-between items-center mt-8">
+<div class="flex items-center border border-stone-300 px-4 py-2 gap-6">
+<button class="hover:text-primary transition-colors"><span class="material-symbols-outlined text-sm">remove</span></button>
+<span class="font-body-md">1</span>
+<button class="hover:text-primary transition-colors"><span class="material-symbols-outlined text-sm">add</span></button>
+</div>
+<button class="text-stone-400 hover:text-error transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-xl">delete</span>
+<span class="font-label-caps text-label-caps uppercase">Remove</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex flex-col md:flex-row gap-8 pb-12 border-b border-stone-200">
+<div class="w-full md:w-48 aspect-[3/4] bg-stone-100 overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="An ethereal studio photograph featuring a length of sheer, translucent silk fabric in a muted charcoal grey, blowing softly in a gentle breeze. The background is a clean, neutral stone grey, maintaining a high-end editorial minimalist aesthetic. The lighting is bright and airy, emphasizing the delicate weave and fluid motion of the luxury textile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaSFnRNRzj29a64qmiksR80i4oiazy7_2d7Pz9_xb171Xh5xeSTfg_DJnit8Eyxuzi4Y2YQnGJiewWEHO31O0cnte1nG_CF-oy1YT6XQv4CbKNWyaJN9z85mXs818kwT8_s5n0-2jTRVBN86Kbezith1VnD7hBSQvKkCIlmpB-d3KjNEwiPs1t8WKcscrJrulQOkIqi-KOvEtTwidemYQCOE6Zl4iObbPIaKvshwBaGb2uBcQMXkDZU6WWwlyCf7n550Cgj4fTtHFv"/>
+</div>
+<div class="flex-grow flex flex-col justify-between py-2">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Raw Silk Kurta Fabric</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-4">Style: Midnight Loom | Color: Charcoal</p>
+<div class="font-label-caps text-label-caps text-primary uppercase">Size: 4.5 Meters</div>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-surface">PKR 12,500</div>
+</div>
+<div class="flex justify-between items-center mt-8">
+<div class="flex items-center border border-stone-300 px-4 py-2 gap-6">
+<button class="hover:text-primary transition-colors"><span class="material-symbols-outlined text-sm">remove</span></button>
+<span class="font-body-md">2</span>
+<button class="hover:text-primary transition-colors"><span class="material-symbols-outlined text-sm">add</span></button>
+</div>
+<button class="text-stone-400 hover:text-error transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-xl">delete</span>
+<span class="font-label-caps text-label-caps uppercase">Remove</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Continue Shopping -->
+<a class="inline-flex items-center gap-4 group mt-12" href="#">
+<span class="material-symbols-outlined group-hover:-translate-x-2 transition-transform">arrow_back</span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest border-b border-transparent group-hover:border-primary transition-all">Continue Shopping</span>
+</a>
+</div>
+<!-- Summary Area -->
+<div class="lg:col-span-4">
+<div class="bg-white p-10 border border-stone-100 shadow-sm sticky top-32">
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-10">Order Summary</h2>
+<div class="space-y-6 mb-10 border-b border-stone-100 pb-10">
+<div class="flex justify-between font-body-md">
+<span class="text-on-surface-variant">Subtotal</span>
+<span class="text-on-surface">PKR 70,000</span>
+</div>
+<div class="flex justify-between font-body-md">
+<span class="text-on-surface-variant">Shipping</span>
+<span class="text-on-surface">PKR 500</span>
+</div>
+<div class="flex justify-between font-body-md">
+<span class="text-on-surface-variant">Tax Estimate</span>
+<span class="text-on-surface">PKR 2,100</span>
+</div>
+</div>
+<div class="mb-10">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-4 block">Promotional Code</label>
+<div class="flex gap-2">
+<input class="flex-grow border-stone-200 focus:ring-0 focus:border-primary px-4 py-3 font-body-md text-sm tracking-widest" placeholder="ENTER CODE" type="text"/>
+<button class="px-6 py-3 border border-primary font-label-caps text-label-caps uppercase hover:bg-primary hover:text-white transition-all">Apply</button>
+</div>
+</div>
+<div class="flex justify-between items-center mb-10">
+<span class="font-headline-sm text-headline-sm">Total</span>
+<span class="font-headline-md text-headline-md text-primary">PKR 72,600</span>
+</div>
+<button class="w-full bg-primary text-white py-5 font-label-caps text-label-caps uppercase tracking-[0.2em] hover:bg-[#4a4842] transition-colors mb-6">
+                        Proceed to Checkout
+                    </button>
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3 text-stone-400">
+<span class="material-symbols-outlined text-lg">verified_user</span>
+<span class="text-[10px] uppercase tracking-widest font-body-md">Secure SSL Encrypted Checkout</span>
+</div>
+<div class="flex items-center gap-3 text-stone-400">
+<span class="material-symbols-outlined text-lg">local_shipping</span>
+<span class="text-[10px] uppercase tracking-widest font-body-md">Complimentary shipping on orders above PKR 100,000</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t-[0.5px] border-stone-200 bg-[#F5EFE6]">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 md:px-24 py-20 max-w-screen-2xl mx-auto">
+<div class="md:col-span-1">
+<span class="text-xl font-serif tracking-widest uppercase text-stone-800 mb-4 block">Rohmani</span>
+<p class="font-serif text-sm tracking-wide leading-relaxed text-stone-700">Impeccable Craft, Timeless Heritage. Since 1974, we have woven the stories of tradition into every fiber of our textiles.</p>
+</div>
+<div class="md:col-span-1">
+<h4 class="font-label-caps text-label-caps uppercase mb-6 text-stone-900">Discover</h4>
+<ul class="space-y-4">
+<li><a class="font-serif text-sm text-stone-500 hover:text-stone-800 transition-colors" href="#">Our Heritage</a></li>
+<li><a class="font-serif text-sm text-stone-500 hover:text-stone-800 transition-colors" href="#">About Us</a></li>
+<li><a class="font-serif text-sm text-stone-500 hover:text-stone-800 transition-colors" href="#">Sustainability</a></li>
+</ul>
+</div>
+<div class="md:col-span-1">
+<h4 class="font-label-caps text-label-caps uppercase mb-6 text-stone-900">Assistance</h4>
+<ul class="space-y-4">
+<li><a class="font-serif text-sm text-stone-500 hover:text-stone-800 transition-colors" href="#">Shipping &amp; Returns</a></li>
+<li><a class="font-serif text-sm text-stone-500 hover:text-stone-800 transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="font-serif text-sm text-stone-500 hover:text-stone-800 transition-colors" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div class="md:col-span-1">
+<h4 class="font-label-caps text-label-caps uppercase mb-6 text-stone-900">Newsletter</h4>
+<p class="font-serif text-xs text-stone-500 mb-4 uppercase tracking-widest">Sign up for early collection access.</p>
+<div class="flex border-b border-stone-400 pb-2">
+<input class="bg-transparent border-none focus:ring-0 p-0 font-serif text-sm w-full placeholder:text-stone-400" placeholder="EMAIL ADDRESS" type="email"/>
+<button class="material-symbols-outlined text-stone-800">arrow_forward</button>
+</div>
+</div>
+</div>
+<div class="px-8 md:px-24 pb-12 max-w-screen-2xl mx-auto">
+<p class="font-serif text-[10px] tracking-[0.2em] uppercase text-stone-400">© 2024 Rohmani By Bin Arif Textiles. Impeccable Craft, Timeless Heritage.</p>
+</div>
+</footer>
+</body></html>

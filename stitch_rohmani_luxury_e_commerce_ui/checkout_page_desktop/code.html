@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Checkout | Rohmani By Bin Arif Textiles</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#615e57",
+                    "inverse-primary": "#cbc6bd",
+                    "surface-tint": "#615e57",
+                    "on-secondary-fixed": "#231919",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed": "#241a00",
+                    "inverse-on-surface": "#f2f0f0",
+                    "error": "#ba1a1a",
+                    "surface-dim": "#dbd9d9",
+                    "secondary-fixed-dim": "#d5c2c2",
+                    "surface-bright": "#fbf9f8",
+                    "tertiary": "#735c00",
+                    "secondary-container": "#eedbdb",
+                    "inverse-surface": "#303030",
+                    "on-error-container": "#93000a",
+                    "on-surface": "#1b1c1c",
+                    "on-secondary-fixed-variant": "#504444",
+                    "on-surface-variant": "#49463f",
+                    "secondary": "#695b5b",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "secondary-fixed": "#f1dede",
+                    "surface-container-highest": "#e4e2e2",
+                    "on-secondary-container": "#6d5f5f",
+                    "on-tertiary-fixed-variant": "#574500",
+                    "outline-variant": "#cbc6bc",
+                    "tertiary-container": "#ffeec6",
+                    "on-primary-fixed-variant": "#494640",
+                    "tertiary-fixed-dim": "#e9c349",
+                    "on-primary-container": "#706c65",
+                    "on-background": "#1b1c1c",
+                    "on-primary": "#ffffff",
+                    "primary-fixed": "#e7e2d9",
+                    "surface-container": "#efeded",
+                    "primary-container": "#f5efe6",
+                    "outline": "#7b776e",
+                    "on-tertiary": "#ffffff",
+                    "surface-variant": "#e4e2e2",
+                    "background": "#fbf9f8",
+                    "error-container": "#ffdad6",
+                    "primary-fixed-dim": "#cbc6bd",
+                    "tertiary-fixed": "#ffe088",
+                    "surface": "#fbf9f8",
+                    "on-primary-fixed": "#1d1b16",
+                    "surface-container-low": "#f5f3f3",
+                    "surface-container-high": "#eae8e7",
+                    "on-tertiary-container": "#846900"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-edge": "64px",
+                    "unit-sm": "8px",
+                    "element-gap": "16px",
+                    "unit-lg": "32px",
+                    "section-gap": "120px",
+                    "container-max": "1440px",
+                    "gutter": "24px",
+                    "unit-xs": "4px",
+                    "unit-md": "16px"
+            },
+            "fontFamily": {
+                    "body-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "headline-md": ["Noto Serif"],
+                    "headline-sm": ["Noto Serif"],
+                    "display-lg": ["Noto Serif"],
+                    "label-caps": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body { background-color: #fbf9f8; }
+        .checkout-step:not(:last-child) { border-bottom: 0.5px solid #cbc6bc; }
+    </style>
+</head>
+<body class="font-body-md text-on-background antialiased">
+<!-- TopNavBar -->
+<header class="sticky top-0 w-full z-50 bg-[#FCF9F6]/95 backdrop-blur-sm border-b-[0.5px] border-stone-200 shadow-sm shadow-stone-200/10">
+<nav class="flex justify-between items-center w-full px-8 md:px-16 py-6 max-w-[1440px] mx-auto">
+<div class="flex items-center gap-unit-md">
+<span class="text-2xl font-serif tracking-[0.2em] uppercase text-stone-900">Rohmani By Bin Arif Textiles</span>
+</div>
+<div class="hidden lg:flex items-center gap-12 font-serif tracking-widest uppercase text-xs md:text-sm">
+<a class="text-stone-500 hover:text-stone-900 transition-colors duration-500" href="#">Home</a>
+<a class="text-stone-500 hover:text-stone-900 transition-colors duration-500" href="#">New Arrivals</a>
+<a class="text-stone-500 hover:text-stone-900 transition-colors duration-500" href="#">Collections</a>
+<a class="text-stone-500 hover:text-stone-900 transition-colors duration-500" href="#">Sale</a>
+<a class="text-stone-500 hover:text-stone-900 transition-colors duration-500" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="hover:opacity-70 transition-opacity duration-300">
+<span class="material-symbols-outlined text-stone-800" data-icon="search">search</span>
+</button>
+<button class="hover:opacity-70 transition-opacity duration-300">
+<span class="material-symbols-outlined text-stone-800" data-icon="person">person</span>
+</button>
+<button class="hover:opacity-70 transition-opacity duration-300 relative">
+<span class="material-symbols-outlined text-stone-800" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-[#D4AF37] text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">2</span>
+</button>
+</div>
+</nav>
+</header>
+<main class="max-w-[1440px] mx-auto px-8 md:px-16 py-section-gap">
+<div class="mb-unit-lg">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-2">Checkout</h1>
+<p class="font-body-md text-on-surface-variant max-w-xl">Complete your order of curated premium textiles. Impeccable craft and heritage delivered to your doorstep.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-unit-lg items-start">
+<!-- Left Side: Accordion Flow -->
+<div class="lg:col-span-8 space-y-unit-md">
+<!-- Step 1: Shipping Information -->
+<div class="checkout-step pb-unit-lg">
+<div class="flex items-center gap-unit-md mb-unit-lg">
+<span class="font-label-caps text-label-caps w-8 h-8 rounded-full border border-primary flex items-center justify-center text-primary">01</span>
+<h2 class="font-headline-sm text-headline-sm">Shipping Information</h2>
+</div>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-unit-md">
+<div class="space-y-unit-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Full Name</label>
+<input class="w-full bg-transparent border-b border-outline-variant py-2 focus:border-primary outline-none transition-colors font-body-md" placeholder="Ahmad Ali" type="text"/>
+</div>
+<div class="space-y-unit-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Phone Number</label>
+<input class="w-full bg-transparent border-b border-outline-variant py-2 focus:border-primary outline-none transition-colors font-body-md" placeholder="+92 300 1234567" type="tel"/>
+</div>
+<div class="md:col-span-2 space-y-unit-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Street Address</label>
+<input class="w-full bg-transparent border-b border-outline-variant py-2 focus:border-primary outline-none transition-colors font-body-md" placeholder="Plot 123, Street 5, Phase VI, DHA" type="text"/>
+</div>
+<div class="space-y-unit-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">City</label>
+<input class="w-full bg-transparent border-b border-outline-variant py-2 focus:border-primary outline-none transition-colors font-body-md" placeholder="Karachi" type="text"/>
+</div>
+<div class="space-y-unit-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Postal Code</label>
+<input class="w-full bg-transparent border-b border-outline-variant py-2 focus:border-primary outline-none transition-colors font-body-md" placeholder="75500" type="text"/>
+</div>
+</form>
+</div>
+<!-- Step 2: Payment Method -->
+<div class="checkout-step py-unit-lg">
+<div class="flex items-center gap-unit-md mb-unit-lg">
+<span class="font-label-caps text-label-caps w-8 h-8 rounded-full border border-primary flex items-center justify-center text-primary">02</span>
+<h2 class="font-headline-sm text-headline-sm">Payment Method</h2>
+</div>
+<div class="space-y-4">
+<!-- Card Payment -->
+<div class="p-6 border border-primary bg-white rounded-lg">
+<label class="flex items-center gap-4 cursor-pointer mb-6">
+<input checked="" class="text-primary focus:ring-primary w-4 h-4 border-outline" name="payment" type="radio"/>
+<span class="font-body-lg font-semibold">Credit / Debit Card</span>
+<div class="ml-auto flex gap-2">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="credit_card">credit_card</span>
+</div>
+</label>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-unit-md">
+<div class="md:col-span-2 space-y-unit-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Card Number</label>
+<input class="w-full bg-transparent border-b border-outline-variant py-2 focus:border-primary outline-none transition-colors font-body-md" placeholder="0000 0000 0000 0000" type="text"/>
+</div>
+<div class="space-y-unit-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Expiry Date</label>
+<input class="w-full bg-transparent border-b border-outline-variant py-2 focus:border-primary outline-none transition-colors font-body-md" placeholder="MM / YY" type="text"/>
+</div>
+<div class="space-y-unit-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">CVV</label>
+<input class="w-full bg-transparent border-b border-outline-variant py-2 focus:border-primary outline-none transition-colors font-body-md" placeholder="123" type="text"/>
+</div>
+</div>
+</div>
+<!-- Bank Transfer -->
+<div class="p-6 border border-outline-variant bg-surface-container-lowest hover:border-primary transition-colors rounded-lg">
+<label class="flex items-center gap-4 cursor-pointer">
+<input class="text-primary focus:ring-primary w-4 h-4 border-outline" name="payment" type="radio"/>
+<span class="font-body-lg">Direct Bank Transfer</span>
+<span class="material-symbols-outlined text-on-surface-variant ml-auto" data-icon="account_balance">account_balance</span>
+</label>
+</div>
+<!-- COD -->
+<div class="p-6 border border-outline-variant bg-surface-container-lowest hover:border-primary transition-colors rounded-lg">
+<label class="flex items-center gap-4 cursor-pointer">
+<input class="text-primary focus:ring-primary w-4 h-4 border-outline" name="payment" type="radio"/>
+<span class="font-body-lg">Cash on Delivery</span>
+<span class="material-symbols-outlined text-on-surface-variant ml-auto" data-icon="payments">payments</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Step 3: Review -->
+<div class="checkout-step py-unit-lg">
+<div class="flex items-center gap-unit-md mb-unit-md">
+<span class="font-label-caps text-label-caps w-8 h-8 rounded-full border border-outline-variant flex items-center justify-center text-outline">03</span>
+<h2 class="font-headline-sm text-headline-sm opacity-50">Review Order</h2>
+</div>
+</div>
+</div>
+<!-- Right Side: Order Summary -->
+<div class="lg:col-span-4 lg:sticky lg:top-32 space-y-unit-md">
+<div class="bg-primary-container p-unit-lg rounded-lg border border-outline-variant/30">
+<h3 class="font-headline-sm text-headline-sm mb-unit-lg">Order Summary</h3>
+<div class="space-y-unit-md mb-unit-lg">
+<!-- Product 1 -->
+<div class="flex gap-unit-md">
+<div class="w-20 h-24 bg-surface-dim overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A detailed close-up shot of an intricate ivory-colored embroidered textile fabric. The craftsmanship displays delicate floral patterns with gold thread accents, representing traditional luxury couture. The lighting is soft and directional, highlighting the rich textures and premium quality of the material in a clean, high-fashion editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYCpuxTf9KaglspAzn4gE0ITo1M2mvMZ8mhkwKWRnhT7JRMsG3FT_m7dh19z3BXj21UabQYPFlowo0ZF1R8Pom6G8GdNTJuxK6dTEQzwe4dbsA4-BNKSzZXI0Zelb440TSgfvtvdm2eOD-o1HJ5qI6imNDnq19ZUdMBqpy6QgStTfgxLeSI7iLYUCvKL7F86x7OBAC-djk_2Kof5mW2AhujReV_QdkcAmLWxb21cA8Kx5xjL8qrRFQYuiAuVqqy4iSXQDkwmStIJ3m"/>
+</div>
+<div class="flex-1 space-y-1">
+<p class="font-serif text-body-md font-bold text-on-surface">Royal Heritage Shalwar Kameez</p>
+<p class="font-body-md text-on-surface-variant text-sm">Ivory / Premium Latha</p>
+<p class="font-body-md font-semibold mt-1">PKR 14,500</p>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="flex gap-unit-md">
+<div class="w-20 h-24 bg-surface-dim overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A sophisticated shot of a deep charcoal grey textile swatch with subtle vertical pinstripes. The fabric is draped elegantly to show its fluid movement and refined weave. The mood is professional and masculine, set against a minimalist studio background with soft ambient lighting that emphasizes the textile's high-end tactile quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrQO5jFfgcA7ufg6BuoAYfdCt2vuXrVhVTO71njWeXaUd2qLioO1UQazaFopTzm4yfJoI4gRrzGkYOMEJlJO_V461CRCcOw1zymEzZdAquqTMYYW8HzalFnIzHvWEUVUAPzJKcNHZH3Y8Wk9CrP3hv924sgUTbGfjdHOi9lsViOkXet3S7xpruvnunuuWRJ_IifgWY7BZ6q7OE0bL38jvArEE4OvE3pBIWNmAMcSZ4hEaxODXLSdU9LegJpy1Cv8SgL6UiboMP-vqm"/>
+</div>
+<div class="flex-1 space-y-1">
+<p class="font-serif text-body-md font-bold text-on-surface">Classic Midnight Unstitched</p>
+<p class="font-body-md text-on-surface-variant text-sm">4.5 Meters / Egyptian Cotton</p>
+<p class="font-body-md font-semibold mt-1">PKR 9,200</p>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant pt-unit-md space-y-3">
+<div class="flex justify-between font-body-md text-on-surface-variant">
+<span>Subtotal</span>
+<span>PKR 23,700</span>
+</div>
+<div class="flex justify-between font-body-md text-on-surface-variant">
+<span>Shipping</span>
+<span>PKR 250</span>
+</div>
+<div class="flex justify-between font-body-md text-on-surface-variant">
+<span>Taxes</span>
+<span>PKR 1,185</span>
+</div>
+<div class="flex justify-between font-body-lg font-bold text-on-surface pt-3 border-t border-outline-variant">
+<span>Total</span>
+<span>PKR 25,135</span>
+</div>
+</div>
+<div class="mt-unit-lg">
+<button class="w-full bg-primary text-white py-5 font-label-caps text-label-caps uppercase tracking-widest hover:bg-[#4d4b45] transition-all duration-300 shadow-md">
+                            Place Order
+                        </button>
+</div>
+<p class="text-center text-[10px] text-on-surface-variant mt-unit-md font-label-caps uppercase opacity-60">
+                        Secure SSL Encrypted Checkout
+                    </p>
+</div>
+<div class="p-unit-md border border-outline-variant/30 rounded-lg flex items-center gap-4 bg-surface-bright">
+<span class="material-symbols-outlined text-primary" data-icon="verified">verified</span>
+<p class="text-xs font-body-md text-on-surface-variant italic">"Impeccable craft and timely heritage. Every piece is guaranteed for lifetime luxury."</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t-[0.5px] border-stone-200 bg-[#F5EFE6] dark:bg-stone-900 mt-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 md:px-24 py-20 max-w-screen-2xl mx-auto font-serif text-sm tracking-wide leading-relaxed text-stone-700">
+<div class="md:col-span-1">
+<span class="text-xl font-serif tracking-widest uppercase text-stone-800 mb-4 block">Rohmani By Bin Arif Textiles</span>
+<p class="mb-6 opacity-80">Defining premium textiles through heritage and contemporary minimalism for the modern enthusiast.</p>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-stone-900 uppercase tracking-widest text-xs mb-6">Collections</h4>
+<ul class="space-y-3">
+<li><a class="text-stone-500 hover:text-stone-800 transition-colors hover:translate-x-1 inline-block duration-300" href="#">Winter Edition</a></li>
+<li><a class="text-stone-500 hover:text-stone-800 transition-colors hover:translate-x-1 inline-block duration-300" href="#">Heritage Latha</a></li>
+<li><a class="text-stone-500 hover:text-stone-800 transition-colors hover:translate-x-1 inline-block duration-300" href="#">Embroidered Festive</a></li>
+<li><a class="text-stone-500 hover:text-stone-800 transition-colors hover:translate-x-1 inline-block duration-300" href="#">Signature Series</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-stone-900 uppercase tracking-widest text-xs mb-6">Company</h4>
+<ul class="space-y-3">
+<li><a class="text-stone-500 hover:text-stone-800 transition-colors hover:translate-x-1 inline-block duration-300" href="#">About Us</a></li>
+<li><a class="text-stone-500 hover:text-stone-800 transition-colors hover:translate-x-1 inline-block duration-300" href="#">Our Heritage</a></li>
+<li><a class="text-stone-500 hover:text-stone-800 transition-colors hover:translate-x-1 inline-block duration-300" href="#">Sustainability</a></li>
+<li><a class="text-stone-500 hover:text-stone-800 transition-colors hover:translate-x-1 inline-block duration-300" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-stone-900 uppercase tracking-widest text-xs mb-6">Legal</h4>
+<ul class="space-y-3">
+<li><a class="text-stone-500 hover:text-stone-800 transition-colors hover:translate-x-1 inline-block duration-300" href="#">Shipping &amp; Returns</a></li>
+<li><a class="text-stone-500 hover:text-stone-800 transition-colors hover:translate-x-1 inline-block duration-300" href="#">Privacy Policy</a></li>
+<li><a class="text-stone-500 hover:text-stone-800 transition-colors hover:translate-x-1 inline-block duration-300" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-stone-200 py-8 px-8 md:px-24">
+<p class="text-center font-serif text-xs tracking-widest uppercase text-stone-400">
+                © 2024 Rohmani By Bin Arif Textiles. Impeccable Craft, Timeless Heritage.
+            </p>
+</div>
+</footer>
+</body></html>

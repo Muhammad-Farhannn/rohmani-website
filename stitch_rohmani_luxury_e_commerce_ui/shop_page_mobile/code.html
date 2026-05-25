@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#615e57",
+                        "inverse-primary": "#cbc6bd",
+                        "surface-tint": "#615e57",
+                        "on-secondary-fixed": "#231919",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed": "#241a00",
+                        "inverse-on-surface": "#f2f0f0",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#dbd9d9",
+                        "secondary-fixed-dim": "#d5c2c2",
+                        "surface-bright": "#fbf9f8",
+                        "tertiary": "#735c00",
+                        "secondary-container": "#eedbdb",
+                        "inverse-surface": "#303030",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#1b1c1c",
+                        "on-secondary-fixed-variant": "#504444",
+                        "on-surface-variant": "#49463f",
+                        "secondary": "#695b5b",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#f1dede",
+                        "surface-container-highest": "#e4e2e2",
+                        "on-secondary-container": "#6d5f5f",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "outline-variant": "#cbc6bc",
+                        "tertiary-container": "#ffeec6",
+                        "on-primary-fixed-variant": "#494640",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "on-primary-container": "#706c65",
+                        "on-background": "#1b1c1c",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#e7e2d9",
+                        "surface-container": "#efeded",
+                        "primary-container": "#f5efe6",
+                        "outline": "#7b776e",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e4e2e2",
+                        "background": "#fbf9f8",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#cbc6bd",
+                        "tertiary-fixed": "#ffe088",
+                        "surface": "#fbf9f8",
+                        "on-primary-fixed": "#1d1b16",
+                        "surface-container-low": "#f5f3f3",
+                        "surface-container-high": "#eae8e7",
+                        "on-tertiary-container": "#846900"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-edge": "64px",
+                        "unit-sm": "8px",
+                        "element-gap": "16px",
+                        "unit-lg": "32px",
+                        "section-gap": "120px",
+                        "container-max": "1440px",
+                        "gutter": "24px",
+                        "unit-xs": "4px",
+                        "unit-md": "16px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Noto Serif"],
+                        "headline-sm": ["Noto Serif"],
+                        "display-lg": ["Noto Serif"],
+                        "label-caps": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fbf9f8;
+            color: #1b1c1c;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="sticky top-0 w-full z-50 bg-[#FCF9F6]/95 backdrop-blur-sm border-b-[0.5px] border-stone-200 shadow-sm shadow-stone-200/10">
+<div class="flex justify-between items-center w-full px-4 py-4 md:px-16 md:py-6">
+<button class="md:hidden">
+<span class="material-symbols-outlined text-on-surface">menu</span>
+</button>
+<div class="text-xl font-serif tracking-[0.2em] uppercase text-stone-900 md:text-2xl">
+                Rohmani
+            </div>
+<div class="flex gap-4 items-center">
+<span class="material-symbols-outlined text-on-surface" data-icon="search">search</span>
+<span class="material-symbols-outlined text-on-surface" data-icon="shopping_bag">shopping_bag</span>
+</div>
+</div>
+<!-- Desktop Nav Hidden on Mobile -->
+<div class="hidden md:flex justify-center gap-8 py-2 font-serif tracking-widest uppercase text-xs text-stone-500">
+<a class="hover:text-stone-900 transition-colors" href="#">Home</a>
+<a class="text-stone-900 border-b border-[#D4AF37] pb-1" href="#">Collections</a>
+<a class="hover:text-stone-900 transition-colors" href="#">New Arrivals</a>
+<a class="hover:text-stone-900 transition-colors" href="#">Sale</a>
+<a class="hover:text-stone-900 transition-colors" href="#">Contact</a>
+</div>
+</nav>
+<!-- Page Header -->
+<header class="px-6 pt-10 pb-6 text-center">
+<h1 class="font-display-lg text-display-lg mb-2 text-primary">Pret Wear</h1>
+<p class="font-body-md text-on-surface-variant max-w-xs mx-auto">Timeless silhouettes meticulously crafted for the modern woman.</p>
+</header>
+<!-- Filter & Sort Bar (Sticky below Header) -->
+<div class="sticky top-[64px] z-40 bg-surface border-y border-outline-variant px-4 py-3 flex justify-between items-center">
+<button class="flex items-center gap-2 font-label-caps text-label-caps uppercase text-on-surface">
+<span class="material-symbols-outlined text-sm">tune</span>
+            Filter
+        </button>
+<div class="h-4 w-[1px] bg-outline-variant"></div>
+<button class="flex items-center gap-2 font-label-caps text-label-caps uppercase text-on-surface">
+            Sort By
+            <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+<!-- Product Grid -->
+<main class="px-4 py-8">
+<div class="grid grid-cols-2 gap-x-4 gap-y-10">
+<!-- Product 1 -->
+<div class="group">
+<div class="aspect-[3/4] mb-4 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A high-fashion vertical studio shot of a woman wearing an ivory hand-embroidered silk tunic from Rohmani. The lighting is soft and diffused, highlighting the intricate gold thread work against the cream fabric. The aesthetic is minimalist and luxurious, set against a warm beige background that matches the brand's quiet luxury palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrG6q37NEKDytolbdiHAvHmjm2e8ZMgbWQFJp8_37R4n6AlseOTrJxM7fxrZdv7f1EP96IwyMpSfTU-l1O0h-r48m9DY-bWXEEbiL0ch0Gm3l3VNpd9QXxYE1oyxMI8FY4dKVUl4z7oij9z8EO6eVPKoGxN_sW1cwmLGYyOauz-U8GO7JJcmK6tVKmfoYlrXJB8VRVfGB23a9dH0r5k6-hzChiG-GZFtFkovw08v1Bd02utdbvhXGEDEZdPlKAfYgSQ_Arvb-V7-l1"/>
+</div>
+<div class="text-center">
+<h3 class="font-headline-sm text-[16px] text-on-surface mb-1">Gilded Ivory Kurta</h3>
+<p class="font-body-md text-primary font-semibold">PKR 18,500</p>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="group">
+<div class="aspect-[3/4] mb-4 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Close-up detail of a charcoal grey velvet dupatta with silver zardozi embroidery along the edges. The textile is displayed elegantly draped over a minimal wooden chair. High-key lighting emphasizes the rich texture of the velvet and the precision of the hand-stitched patterns. The overall mood is serene and sophisticated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjRMvwCVhTcu6s3Km7iT4CdX4zIWyk_8EgNCG6GJSO5UXDc_N1MCPohmsXlIPkbVtQQIvMTUsUdDSIGYlYlNnmLkmm0P3vw5IlGvbROWYHRJKE4iMv023m7jybUwlifIWt1fUozzJhetublhdDTyDxdzg_YNwb4ZV_FX-P8sKEhotDgV99Ew6aXHZSmzNVv8r0y_Sb1DtQDnHlnQjiZ88V2U5I_RYeScK58UgXOyn02xR1wSBtPt49mIeBsl9xl4TpUra-UuufCSNN"/>
+</div>
+<div class="text-center">
+<h3 class="font-headline-sm text-[16px] text-on-surface mb-1">Noir Velvet Wrap</h3>
+<p class="font-body-md text-primary font-semibold">PKR 12,900</p>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="group">
+<div class="aspect-[3/4] mb-4 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Full-length shot of a model wearing a soft sage green cotton-silk ensemble with delicate floral block prints. The background is a minimalist plaster wall in a light stone color. The composition uses plenty of negative space to convey a sense of calm and exclusivity. Soft morning light creates a warm, natural atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtATIMHPOd0GAgNfW7AxFRJxBKcqiOdDyIrg5NYgGkxU9fC_g2nVY7_e9vo7rLDzeoqBy2_t29ptRBgwNGochM-g6Tl0zF6-yLxm33uFt_UDvF3Oja1DwmPnxNvrMRUNWdNLr0JvDnV4n9JC2zz4rwp7CkUaiYzZnfzrTIERQlnmluBDj5c7ij-mfaC_AmnGW-lAD3aDZBuWjfJe8aXtrCUi30AgegA1wAZHnJ3KY3cECSjsSE6BIhWFpaAm0O9mCawpVp3BJJehLQ"/>
+</div>
+<div class="text-center">
+<h3 class="font-headline-sm text-[16px] text-on-surface mb-1">Sage Bloom Suit</h3>
+<p class="font-body-md text-primary font-semibold">PKR 22,000</p>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="group">
+<div class="aspect-[3/4] mb-4 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A minimalist display of a dusty rose pashmina shawl featuring fine traditional patterns. The fabric is folded neatly on a white marble surface, illuminated by bright, clean light-mode studio lighting. The color palette is composed of muted pastels and soft neutrals, reflecting a premium editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApMqnoWuuVo3qVJhlkdXPJFJUWTEWajIJghWFF5MHjL9nGqucsN6wSkTJIXVkyO05qKCTCfvxiXzv6-B3xzQ_ph3x7PiX_CLOApTyXx_AEFeJKkYAzackj-_lVQ-Gz-EFgcfNgqOc6HUL4HS-rlf9-KA3GlZ3PzJQT_L4dPfg2T5bOP2lSz3STdTKCmXBLMiK4IkDfHM0bBgzLhbg3x8iLocABmssf8qJH2VK6iw8EviUdJznB00m3Bcuvam3uEptGBVBr9_vZGq1o"/>
+</div>
+<div class="text-center">
+<h3 class="font-headline-sm text-[16px] text-on-surface mb-1">Dusty Rose Pashmina</h3>
+<p class="font-body-md text-primary font-semibold">PKR 35,000</p>
+</div>
+</div>
+<!-- Product 5 -->
+<div class="group">
+<div class="aspect-[3/4] mb-4 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A model in a contemporary navy blue lawn suit with geometric embroidery at the neckline. Shot in an architectural setting with clean lines and soft shadows. The visual style is modern high-fashion minimalism, prioritizing the textile's drape and the garment's clean silhouette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPYrPsdPsotXm1bclYFKv2nzgNNJI6Jrj8cRDt31aquiKQq7mAIpf6H_5cPHZNWsCncneV2DMxcEMVymX0kbtsi6uH3qRO2RKWupgGFNdYrv5g_oxY8wI0lMq-Nj3TN0tUjzTmoAJNN72yUV15NoYYQlXwZcKCrsE2umratA-UzVL3UJvP9ugpeE1GIrt1ZHG6frjdVPQkeEZRioRrObHpv16CAO9i1ysljV0PGRcL-1EDNacYT8QKkW7ZmfqUhXaRGs2FV9buHHrH"/>
+</div>
+<div class="text-center">
+<h3 class="font-headline-sm text-[16px] text-on-surface mb-1">Midnight Azure Set</h3>
+<p class="font-body-md text-primary font-semibold">PKR 15,500</p>
+</div>
+</div>
+<!-- Product 6 -->
+<div class="group">
+<div class="aspect-[3/4] mb-4 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A detail shot of hand-woven khadi fabric in a warm terracotta hue, featuring subtle golden threads. The texture is extremely detailed, showing the tactile quality of the textile. Set in a bright, airy space with neutral tones to maintain the brand's aesthetic of quiet luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1f4UwWhOQAKUi3nPUQtTboyIx3bEeGN2FpuVZ5Xx48Ay5de241ekjptHIpUGovGMlwpU5ilretxzqJy_CtpCdRKXvH4TNMXjH1Q0qpOnvAy1Uvy_2K9mJarYuLoOsGMqCwigqohxEFA3RBe5zGzYzsfIALymTH7tqaFwLYJei8bcwQF6lkYHrxh7tnHxWN268ZKR7rHLCltlcZZtg8pkjIbuAOBDV--v5SL3uxD77HPLL6Fumf8jUZ06jojzd5HETX00TEYqnMx1D"/>
+</div>
+<div class="text-center">
+<h3 class="font-headline-sm text-[16px] text-on-surface mb-1">Terracotta Khadi</h3>
+<p class="font-body-md text-primary font-semibold">PKR 9,800</p>
+</div>
+</div>
+</div>
+<!-- Load More -->
+<div class="mt-16 text-center">
+<button class="px-10 py-4 border border-primary font-label-caps text-label-caps uppercase hover:bg-primary hover:text-white transition-all duration-300">
+                View All Collections
+            </button>
+</div>
+</main>
+<!-- Newsletter Section (Tonal Layering) -->
+<section class="bg-primary-container px-6 py-20 mt-20 text-center">
+<h2 class="font-headline-md text-headline-md text-primary mb-4">The Atelier Journal</h2>
+<p class="font-body-md text-on-surface-variant mb-8 max-w-sm mx-auto">Subscribe to receive updates on our latest heritage collections and exclusive events.</p>
+<div class="max-w-md mx-auto flex flex-col gap-4">
+<input class="bg-transparent border-b border-outline-variant focus:border-primary focus:ring-0 text-center font-label-caps text-label-caps py-3" placeholder="YOUR EMAIL" type="email"/>
+<button class="font-label-caps text-label-caps bg-primary text-white py-4 uppercase tracking-widest">Join Us</button>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#F5EFE6] border-t-[0.5px] border-stone-200">
+<div class="grid grid-cols-1 gap-12 px-8 py-20 max-w-screen-2xl mx-auto md:grid-cols-4">
+<div>
+<span class="text-xl font-serif tracking-widest uppercase text-stone-800 mb-4 block">Rohmani</span>
+<p class="font-serif text-sm tracking-wide leading-relaxed text-stone-500">
+                    © 2024 Rohmani By Bin Arif Textiles. Impeccable Craft, Timeless Heritage.
+                </p>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-caps text-label-caps text-on-surface">Collections</h4>
+<ul class="font-serif text-sm tracking-wide leading-relaxed text-stone-500 space-y-2">
+<li class="hover:translate-x-1 transition-transform duration-300">Pret</li>
+<li class="hover:translate-x-1 transition-transform duration-300">Unstitched</li>
+<li class="hover:translate-x-1 transition-transform duration-300">Couture</li>
+<li class="hover:translate-x-1 transition-transform duration-300">Accessories</li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-caps text-label-caps text-on-surface">Company</h4>
+<ul class="font-serif text-sm tracking-wide leading-relaxed text-stone-500 space-y-2">
+<li class="hover:translate-x-1 transition-transform duration-300">About Us</li>
+<li class="hover:translate-x-1 transition-transform duration-300">Our Heritage</li>
+<li class="hover:translate-x-1 transition-transform duration-300">Sustainability</li>
+<li class="hover:translate-x-1 transition-transform duration-300">Contact Us</li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-caps text-label-caps text-on-surface">Customer Service</h4>
+<ul class="font-serif text-sm tracking-wide leading-relaxed text-stone-500 space-y-2">
+<li class="hover:translate-x-1 transition-transform duration-300">Shipping &amp; Returns</li>
+<li class="hover:translate-x-1 transition-transform duration-300">Privacy Policy</li>
+<li class="hover:translate-x-1 transition-transform duration-300">Size Guide</li>
+</ul>
+</div>
+</div>
+</footer>
+<!-- Filter Drawer (Mock Overlay - Hidden by default in real code but visible for UI demo) -->
+<!-- This would normally be toggled by the Filter button -->
+<div class="fixed inset-0 z-[100] hidden" id="filter-drawer">
+<div class="absolute inset-0 bg-on-surface/20 backdrop-blur-sm"></div>
+<div class="absolute bottom-0 left-0 right-0 bg-surface h-[751px] rounded-t-3xl shadow-2xl p-6 flex flex-col">
+<div class="flex justify-between items-center mb-8">
+<h2 class="font-headline-sm text-on-surface">Filter By</h2>
+<button class="material-symbols-outlined text-primary">close</button>
+</div>
+<div class="flex-1 overflow-y-auto space-y-8">
+<div>
+<h3 class="font-label-caps text-label-caps text-primary mb-4">Category</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-2 bg-primary-container text-on-primary-container text-xs rounded-full">All Pret</span>
+<span class="px-4 py-2 border border-outline-variant text-on-surface-variant text-xs rounded-full">Tunics</span>
+<span class="px-4 py-2 border border-outline-variant text-on-surface-variant text-xs rounded-full">Shawls</span>
+<span class="px-4 py-2 border border-outline-variant text-on-surface-variant text-xs rounded-full">Formals</span>
+</div>
+</div>
+<div>
+<h3 class="font-label-caps text-label-caps text-primary mb-4">Color Palette</h3>
+<div class="grid grid-cols-5 gap-4">
+<div class="w-8 h-8 rounded-full bg-[#FCF9F6] border border-outline-variant"></div>
+<div class="w-8 h-8 rounded-full bg-[#E9C349]"></div>
+<div class="w-8 h-8 rounded-full bg-[#303030]"></div>
+<div class="w-8 h-8 rounded-full bg-[#695B5B]"></div>
+<div class="w-8 h-8 rounded-full bg-[#CCD5AE]"></div>
+</div>
+</div>
+<div>
+<h3 class="font-label-caps text-label-caps text-primary mb-4">Price Range</h3>
+<div class="w-full h-1 bg-outline-variant relative rounded-full">
+<div class="absolute left-1/4 right-1/4 h-1 bg-primary"></div>
+<div class="absolute left-1/4 -top-2 w-5 h-5 bg-surface border-2 border-primary rounded-full shadow-md"></div>
+<div class="absolute right-1/4 -top-2 w-5 h-5 bg-surface border-2 border-primary rounded-full shadow-md"></div>
+</div>
+<div class="flex justify-between mt-4 font-body-md text-sm text-on-surface-variant">
+<span>PKR 5,000</span>
+<span>PKR 50,000</span>
+</div>
+</div>
+</div>
+<div class="pt-6 border-t border-outline-variant">
+<button class="w-full bg-primary text-white py-4 font-label-caps text-label-caps uppercase tracking-widest">Apply Filters</button>
+</div>
+</div>
+</div>
+</body></html>

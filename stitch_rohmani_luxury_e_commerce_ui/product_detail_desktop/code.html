@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#615e57",
+                        "inverse-primary": "#cbc6bd",
+                        "surface-tint": "#615e57",
+                        "on-secondary-fixed": "#231919",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed": "#241a00",
+                        "inverse-on-surface": "#f2f0f0",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#dbd9d9",
+                        "secondary-fixed-dim": "#d5c2c2",
+                        "surface-bright": "#fbf9f8",
+                        "tertiary": "#735c00",
+                        "secondary-container": "#eedbdb",
+                        "inverse-surface": "#303030",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#1b1c1c",
+                        "on-secondary-fixed-variant": "#504444",
+                        "on-surface-variant": "#49463f",
+                        "secondary": "#695b5b",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#f1dede",
+                        "surface-container-highest": "#e4e2e2",
+                        "on-secondary-container": "#6d5f5f",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "outline-variant": "#cbc6bc",
+                        "tertiary-container": "#ffeec6",
+                        "on-primary-fixed-variant": "#494640",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "on-primary-container": "#706c65",
+                        "on-background": "#1b1c1c",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#e7e2d9",
+                        "surface-container": "#efeded",
+                        "primary-container": "#f5efe6",
+                        "outline": "#7b776e",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e4e2e2",
+                        "background": "#fbf9f8",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#cbc6bd",
+                        "tertiary-fixed": "#ffe088",
+                        "surface": "#fbf9f8",
+                        "on-primary-fixed": "#1d1b16",
+                        "surface-container-low": "#f5f3f3",
+                        "surface-container-high": "#eae8e7",
+                        "on-tertiary-container": "#846900"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-edge": "64px",
+                        "unit-sm": "8px",
+                        "element-gap": "16px",
+                        "unit-lg": "32px",
+                        "section-gap": "120px",
+                        "container-max": "1440px",
+                        "gutter": "24px",
+                        "unit-xs": "4px",
+                        "unit-md": "16px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Noto Serif"],
+                        "headline-sm": ["Noto Serif"],
+                        "display-lg": ["Noto Serif"],
+                        "label-caps": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .luxury-zoom:hover img {
+            transform: scale(1.1);
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="sticky top-0 w-full z-50 bg-[#FCF9F6]/95 backdrop-blur-sm border-b-[0.5px] border-stone-200 shadow-sm shadow-stone-200/10">
+<div class="flex justify-between items-center w-full px-8 md:px-16 py-6">
+<div class="hidden md:flex items-center gap-8">
+<a class="font-serif tracking-widest uppercase text-xs md:text-sm text-stone-900 border-b border-[#D4AF37] pb-1" href="#">Home</a>
+<a class="font-serif tracking-widest uppercase text-xs md:text-sm text-stone-500 hover:text-stone-900 transition-colors duration-500" href="#">New Arrivals</a>
+<a class="font-serif tracking-widest uppercase text-xs md:text-sm text-stone-500 hover:text-stone-900 transition-colors duration-500" href="#">Collections</a>
+</div>
+<a class="text-2xl font-serif tracking-[0.2em] uppercase text-stone-900" href="#">Rohmani By Bin Arif Textiles</a>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center border-b border-stone-200 py-1">
+<span class="material-symbols-outlined text-stone-500 text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-[10px] tracking-widest w-32 placeholder-stone-400" placeholder="SEARCH" type="text"/>
+</div>
+<button class="hover:opacity-70 transition-opacity duration-300">
+<span class="material-symbols-outlined text-stone-800" data-icon="person">person</span>
+</button>
+<button class="hover:opacity-70 transition-opacity duration-300 relative">
+<span class="material-symbols-outlined text-stone-800" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-[#D4AF37] text-white text-[8px] w-4 h-4 flex items-center justify-center rounded-full">2</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="max-w-[1440px] mx-auto px-8 md:px-16 py-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<!-- Gallery Section -->
+<div class="lg:col-span-7 flex gap-4 h-[800px]">
+<div class="hidden md:flex flex-col gap-4 w-24 overflow-y-auto no-scrollbar">
+<div class="aspect-[3/4] border border-stone-200 cursor-pointer overflow-hidden opacity-100">
+<img class="w-full h-full object-cover" data-alt="Close up detailed shot of high-end white Pakistani textile fabric with intricate gold thread embroidery, reflecting luxury and artisanal craftsmanship under soft studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKLWc8g_YPC-GybB1trjDUaTeJCM5hCGYgwyt9i52X3_uaTLA0rtf8LrPR-D3nyBN7EM2JX7woBmInQB5jo8ES2BtdK-8IWKsr-96cT6-q03PfN_dsaSsu-8yDwG2T2aZTS2cZu7RY2jwBSczizXhkFYHWyvbYN8qgZeEjMkaRhOAaFZJ8rYgFBZTErPo6wbq6r5ArnTfy0s9XslJ8dEO7xxqJLGX1axJCTBkgZIz3ukKxSOBkIxVY5WscOep1WeJjsuTcZ3YDqVhh"/>
+</div>
+<div class="aspect-[3/4] border border-stone-100 cursor-pointer overflow-hidden opacity-60 hover:opacity-100 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="Full length studio fashion photography of a model wearing a luxurious cream-colored silk ensemble with traditional motifs, set against a minimalist beige background with elegant soft shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbxPapFg8TMWJmFAUCgnP1mPKmGhte4HCQKEaztDbIC_pdAmrHxzCkMFWgi5RYaAyKtSLchOKHHSL3EKYy_iueqhp40DOkWMH2Gr9G6rYqyJN7YhXLCkFsfACVvdjFW43PF2vU6mb1NFxad1sbhaQpOQdkJ3xF9kGhlyhtasKm2TRxHh-H6_TQBc9TmfV045ruFTKqZs6yOH2XHE5B-FxIc-YpM1_OHYbWQbiR_ilp14TcqTl3Ygn08z-5AHkmgz4vAeQzpdGU-FZO"/>
+</div>
+<div class="aspect-[3/4] border border-stone-100 cursor-pointer overflow-hidden opacity-60 hover:opacity-100 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="Side profile detail of a high-fashion garment featuring delicate hand-stitched patterns and textures on premium cotton-silk blend, highlighting the heritage and quality of the textile brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjglIbJvL1rKcd3XnuhebdHfews1j08t7iClll-Ez9f4ReH-NCE8UwDQpoYQgqZnV--t5tPFEcXOgt4kX-P3P-o7zTM04lOVN6zN8Jd0tU4uLNYBYZjf-QTZCcLqUsRkfz--1807xR7chPWwJiuSRSu74tK4MV5H6P2W-6xQUDxhg199eGGAS6agsDDuSVcvoF-g-3X-jC7Ra_Ez9bejART_t7zKSKziCTl63_1edGfnLeZ2O-FN4xjaSa-ZV2jz7i8OHxtXgCLnWc"/>
+</div>
+<div class="aspect-[3/4] border border-stone-100 cursor-pointer overflow-hidden opacity-60 hover:opacity-100 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="A lifestyle shot of a luxurious fabric draped over an antique wooden chair in a sunlit room with marble floors, emphasizing the timeless elegance and premium nature of the textile collection." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcVadxjlyr12YDPTiaCp5SyqU9EFZvJLfuouLAeNVMuxWj1klUuW5OVF8TP8Q1w0eVZK7D343EaVSjOlhB_VP02AEmewHy8BDVLF5SJd8Y8UlOOkhReKxBenCMum93WtF_ot9RutrX03HrCJACMjRTctMMTcfY_5QEAibFyDVvhn_ANb-UWxKwroT_w062WVtceXebaFPnWZqE3E_vup4GDZhyyNgovJIsUwo3kg9vgVrT5EJihGpIwm4qphmXst-2fVyweg3xNIhp"/>
+</div>
+</div>
+<div class="flex-1 overflow-hidden luxury-zoom relative">
+<img class="w-full h-full object-cover transition-transform duration-700" data-alt="A professional high-resolution fashion editorial shot of a woman in a sophisticated, cream-colored embroidered Pakistani attire. The lighting is ethereal and soft, casting gentle shadows that emphasize the intricate fabric texture. The background is a clean, minimalist off-white studio setting, embodying quiet luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcECAT-p8C2BiUQTDJhDdM-0HViJtyrWmYehFEjuhMPQoXEEbJYh959QcEcSvYsHFzTUu79cD5SQflrHgygVYDYq2OJOMzJIlDYHTQn-2APJ5a-Yawm9auX-BmLr1XahjQsazueOMFoL24AHQCnHt8NKrXQOGE-Um0y10OedjwlqGJLtskKeYY7_qagAxgflnb6eYxWns2fWHLSLq9SzcyikZft_MhUnXH7sv_culH6qVggIe3DkmAQdRmeeN6Puw_Ck5w2-a-rP2H"/>
+<div class="absolute bottom-6 right-6 flex flex-col gap-2">
+<button class="w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-stone-700">zoom_in</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Info Section -->
+<div class="lg:col-span-5 flex flex-col gap-8">
+<div>
+<nav class="flex gap-2 text-[10px] tracking-widest text-stone-400 mb-6 uppercase">
+<a href="#">Collections</a>
+<span>/</span>
+<a href="#">Summer Heritage '24</a>
+<span>/</span>
+<span class="text-stone-900">Ivory Serenity Suite</span>
+</nav>
+<h1 class="font-headline-md text-display-lg text-stone-900 mb-2">Ivory Serenity Suite</h1>
+<p class="text-stone-500 font-label-caps tracking-widest">ARTISAN SERIES NO. 442</p>
+</div>
+<div class="flex items-baseline gap-4">
+<span class="text-headline-md font-body-lg text-stone-800">Rs. 24,500</span>
+<span class="text-stone-400 line-through text-body-md font-body-md">Rs. 32,000</span>
+</div>
+<div class="h-[1px] bg-stone-100 w-full"></div>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-md">
+                    A masterpiece of textile engineering, crafted from 100% long-staple Giza cotton with hand-applied zari embroidery. This ensemble honors the timeless heritage of Bin Arif Textiles through minimalist motifs and a contemporary silhouette.
+                </p>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between mb-4">
+<span class="font-label-caps tracking-widest text-stone-900">SELECT SIZE</span>
+<button class="text-stone-400 text-[10px] underline tracking-widest hover:text-stone-900 transition-colors">SIZE GUIDE</button>
+</div>
+<div class="grid grid-cols-5 gap-2">
+<button class="py-3 border border-stone-200 text-xs tracking-widest hover:border-stone-900 transition-colors uppercase">XS</button>
+<button class="py-3 border border-stone-200 text-xs tracking-widest hover:border-stone-900 transition-colors uppercase">S</button>
+<button class="py-3 border border-stone-900 bg-stone-900 text-white text-xs tracking-widest uppercase">M</button>
+<button class="py-3 border border-stone-200 text-xs tracking-widest hover:border-stone-900 transition-colors uppercase">L</button>
+<button class="py-3 border border-stone-200 text-xs tracking-widest hover:border-stone-900 transition-colors uppercase">XL</button>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex items-center border border-stone-200 px-4 py-3">
+<button class="text-stone-400 hover:text-stone-900 transition-colors"><span class="material-symbols-outlined text-sm">remove</span></button>
+<span class="px-6 font-body-md">1</span>
+<button class="text-stone-400 hover:text-stone-900 transition-colors"><span class="material-symbols-outlined text-sm">add</span></button>
+</div>
+<button class="flex-1 bg-[#D4AF37] hover:bg-[#C19B2E] text-white font-label-caps tracking-widest py-4 transition-colors">ADD TO CART</button>
+</div>
+<button class="w-full flex items-center justify-center gap-2 border border-stone-200 py-4 font-label-caps tracking-widest hover:bg-stone-50 transition-colors">
+<span class="material-symbols-outlined text-sm">favorite</span>
+                        ADD TO WISHLIST
+                    </button>
+</div>
+<!-- Tabs -->
+<div class="mt-8 border-t border-stone-100">
+<div class="flex gap-8 border-b border-stone-100">
+<button class="py-4 border-b border-stone-900 text-[10px] tracking-widest uppercase text-stone-900 font-bold">Description</button>
+<button class="py-4 text-[10px] tracking-widest uppercase text-stone-400 hover:text-stone-600 transition-colors">Material &amp; Care</button>
+<button class="py-4 text-[10px] tracking-widest uppercase text-stone-400 hover:text-stone-600 transition-colors">Shipping Info</button>
+</div>
+<div class="py-8">
+<ul class="space-y-3 text-body-md text-stone-600 list-disc list-inside">
+<li>Hand-loomed cotton-silk blend</li>
+<li>Zari and Resham hand embroidery</li>
+<li>Unstitched 3-piece fabric set</li>
+<li>2.5m Kameez, 2.5m Dupatta, 2.25m Trousers</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- Reviews Section -->
+<section class="mt-section-gap">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-stone-100 pb-8">
+<div>
+<h2 class="font-headline-md text-headline-md text-stone-900 mb-2">Customer Reviews</h2>
+<div class="flex items-center gap-2">
+<div class="flex text-[#D4AF37]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined">star_half</span>
+</div>
+<span class="text-body-md font-body-md text-stone-500">4.8 (24 reviews)</span>
+</div>
+</div>
+<button class="font-label-caps tracking-widest border-b border-stone-900 pb-1 hover:text-stone-500 hover:border-stone-400 transition-all">WRITE A REVIEW</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="font-label-caps tracking-widest text-stone-900 uppercase">Ayesha R.</span>
+<span class="text-stone-400 text-xs">2 weeks ago</span>
+</div>
+<div class="flex text-[#D4AF37] text-sm">
+<span class="material-symbols-outlined scale-75" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined scale-75" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined scale-75" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined scale-75" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined scale-75" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-body-md font-body-md italic text-stone-700 leading-relaxed">
+                        "The fabric quality exceeded my expectations. The hand embroidery is even more delicate in person than it appears in the photos. Truly a piece of heritage."
+                    </p>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="font-label-caps tracking-widest text-stone-900 uppercase">Hammad K.</span>
+<span class="text-stone-400 text-xs">1 month ago</span>
+</div>
+<div class="flex text-[#D4AF37] text-sm">
+<span class="material-symbols-outlined scale-75" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined scale-75" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined scale-75" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined scale-75" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined scale-75">star</span>
+</div>
+<p class="text-body-md font-body-md italic text-stone-700 leading-relaxed">
+                        "Beautiful craftsmanship. The packaging was also very premium, which made the unboxing experience feel special. Will definitely purchase again."
+                    </p>
+</div>
+</div>
+</section>
+<!-- You May Also Like Section -->
+<section class="mt-section-gap">
+<h2 class="font-headline-md text-headline-md text-stone-900 mb-12 text-center uppercase tracking-[0.2em]">You May Also Like</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<!-- Product Card 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden mb-4 relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="High fashion studio shot of a luxurious dark blue traditional Pakistani outfit with silver embroidery. The setting is high-key with soft professional lighting on a neutral off-white background, emphasizing a high-end luxury aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9JlVBAZ7dSE2ubIPVQZFbCu1CENRIrzp_2ny6PelOqIzgzUtDcaR35J2isgR42_xyg0jvPuKCWsan7ahMYSaluIuR9o4SJmK2CSByr-zTeWCe5ZzqMQ716oRUe6a377lfmQB6mZTS-4pJvd4rSq8jIXzV308Rh0Pm9qtEjRZGwrxl_S_a8bwMlhFE2y_LIYFQ9z3eQBKaeU3gxM0Y2WS1MtXrr_47Qtke5bzqg-RAfDx-IVe3pCWV-r0w28LB4WalA0z-47-vJ_rE"/>
+<div class="absolute bottom-4 left-0 right-0 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button class="bg-white/90 backdrop-blur px-6 py-2 font-label-caps text-[10px] tracking-widest">QUICK ADD</button>
+</div>
+</div>
+<div class="text-center">
+<h3 class="font-headline-sm text-body-lg text-stone-900 mb-1">Midnight Pearl Suit</h3>
+<p class="text-stone-500 font-body-md">Rs. 28,000</p>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden mb-4 relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Exquisite fashion photography of a sage green silk textile piece with delicate floral hand-embroidery. The lighting is soft and golden, creating a warm, premium atmosphere that highlights the intricate textures of the luxury fabric." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy6IDpzqO3yUMSTv6loyRjJB33rEr5vrvXxPaLCACVvOqgU7XtStZmgIw_2f5wpI-F8ozq7wrSABufKGFbZVPxotIJs5nCk0qHfCwOfJAwpkICYVGol5ZPqq-tbI27TpW-rCSlkrS5CQxTwnb_eRXU9BXjIIEV_RNZTNJs8fT7U29kWi082xDA-xI23LSHzZd6EOdkdHw9pWzO0EriJZy4Fz3dol7WB2d982cXTnLl8OOtk8N8t1rqL-OL3j0tNrt-n3K6cdfqNQG3"/>
+<div class="absolute bottom-4 left-0 right-0 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button class="bg-white/90 backdrop-blur px-6 py-2 font-label-caps text-[10px] tracking-widest">QUICK ADD</button>
+</div>
+</div>
+<div class="text-center">
+<h3 class="font-headline-sm text-body-lg text-stone-900 mb-1">Sage Blossom Kurta</h3>
+<p class="text-stone-500 font-body-md">Rs. 21,500</p>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden mb-4 relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A luxurious peach-toned cotton-silk fabric displayed in a minimalist editorial style. The lighting is crisp and clean, reflecting the modern luxury brand identity of Rohmani Textiles. Minimal shadows and deep texture focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsgJJXDCT4QVNvlc2M_gDPLsqY07ZGNEHGfDhtAXIgtanUdDY1vuvBUS6bHkglfjZxKfBaYxkjylW9-Rgd4_lyCGqnFfo2B4m6zO2iRjvFSGmVdqhNb3t_PXhA3zGgAa2TbeiOZhFy0U5wbpH-JN2G18Q_GlFbZWKllZxBAiJ3VATSHoZbJV3YzRTsPGqvqBEO0uY1n5ysK4TqrTFgqE6-WsAgzmImJepNEb141BNIVlr-g4OFZttyC018xifAcr3cUDq_iMw-aXJT"/>
+<div class="absolute bottom-4 left-0 right-0 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button class="bg-white/90 backdrop-blur px-6 py-2 font-label-caps text-[10px] tracking-widest">QUICK ADD</button>
+</div>
+</div>
+<div class="text-center">
+<h3 class="font-headline-sm text-body-lg text-stone-900 mb-1">Terracotta Drape</h3>
+<p class="text-stone-500 font-body-md">Rs. 19,000</p>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden mb-4 relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Professional studio shot of a model wearing a charcoal black luxury textile ensemble with gold accents. The lighting is dramatic but soft, focused on the quality of the material and the craftsmanship of the embroidery against a light gray backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4rDUTFa-Cz0akEjhzQfSCZ0RWNN2uKIP0tfffDOyutiUjSMGI-ANoc4sUMhYpQrobrVEYffQ59Cj9zRc0cgTEEfqgHZ0Akq9Jlnn0AHSEBS6hyX-2A51kwPSpE-n8rLuYOgzKKAUq40urBkJzn_nxjm2KTImNmyms76s78iCfeMxViU3IcOUd5XACOFIstMD8jPhLdvBtJCx90R2daUgFAzSxp0MJxgihj7SHOQSyrSXyjzYd5jXOa60zqnlj-g4mxwsZSEMzPtyU"/>
+<div class="absolute bottom-4 left-0 right-0 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button class="bg-white/90 backdrop-blur px-6 py-2 font-label-caps text-[10px] tracking-widest">QUICK ADD</button>
+</div>
+</div>
+<div class="text-center">
+<h3 class="font-headline-sm text-body-lg text-stone-900 mb-1">Obsidian Gold Edition</h3>
+<p class="text-stone-500 font-body-md">Rs. 35,000</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t-[0.5px] border-stone-200 bg-[#F5EFE6] mt-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 md:px-24 py-20 max-w-screen-2xl mx-auto">
+<div class="md:col-span-1">
+<span class="text-xl font-serif tracking-widest uppercase text-stone-800 mb-4 block">Rohmani</span>
+<p class="text-stone-500 font-serif text-sm tracking-wide leading-relaxed">
+                    Crafting legacies since 1984. Bin Arif Textiles brings you the finest selection of Pakistani heritage textiles, reimagined for the modern aesthetic.
+                </p>
+</div>
+<div>
+<h4 class="font-label-caps tracking-widest text-stone-900 mb-6 uppercase">Collections</h4>
+<ul class="space-y-4">
+<li><a class="text-stone-500 font-serif text-sm hover:text-stone-800 transition-colors" href="#">Summer '24</a></li>
+<li><a class="text-stone-500 font-serif text-sm hover:text-stone-800 transition-colors" href="#">Bridal Heritage</a></li>
+<li><a class="text-stone-500 font-serif text-sm hover:text-stone-800 transition-colors" href="#">Artisan Series</a></li>
+<li><a class="text-stone-500 font-serif text-sm hover:text-stone-800 transition-colors" href="#">Signature Silk</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps tracking-widest text-stone-900 mb-6 uppercase">Customer Care</h4>
+<ul class="space-y-4">
+<li><a class="text-stone-500 font-serif text-sm hover:text-stone-800 transition-colors" href="#">Shipping &amp; Returns</a></li>
+<li><a class="text-stone-500 font-serif text-sm hover:text-stone-800 transition-colors" href="#">Size Guide</a></li>
+<li><a class="text-stone-500 font-serif text-sm hover:text-stone-800 transition-colors" href="#">Order Tracking</a></li>
+<li><a class="text-stone-500 font-serif text-sm hover:text-stone-800 transition-colors" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps tracking-widest text-stone-900 mb-6 uppercase">Newsletter</h4>
+<p class="text-stone-500 font-serif text-sm mb-6">Join the Rohmani circle for exclusive early access and heritage insights.</p>
+<div class="flex border-b border-stone-300 pb-2">
+<input class="bg-transparent border-none focus:ring-0 text-[10px] tracking-widest w-full" placeholder="EMAIL ADDRESS" type="email"/>
+<button class="material-symbols-outlined text-stone-400">arrow_forward</button>
+</div>
+</div>
+</div>
+<div class="px-8 md:px-24 py-8 border-t border-stone-200/50 flex flex-col md:row items-center justify-between gap-4 max-w-screen-2xl mx-auto">
+<p class="text-[10px] tracking-widest text-stone-400 uppercase">© 2024 Rohmani By Bin Arif Textiles. Impeccable Craft, Timeless Heritage.</p>
+<div class="flex gap-6">
+<a class="text-stone-400 hover:text-stone-900 transition-colors" href="#"><span class="material-symbols-outlined text-sm">public</span></a>
+<a class="text-stone-400 hover:text-stone-900 transition-colors" href="#"><span class="material-symbols-outlined text-sm">share</span></a>
+</div>
+</div>
+</footer>
+</body></html>

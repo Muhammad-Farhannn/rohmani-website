@@ -1,0 +1,46 @@
+{
+  "products": [
+    {
+      "id": 1000,
+      "name": "LOGO",
+      "description": "asdfghjk",
+      "price": 24000,
+      "original_price": 32000,
+      "category": "",
+      "style": "",
+      "color": "",
+      "material": "",
+      "stock": 10,
+      "featured": false,
+      "image_url": "https://vcucuimlswwampxtyskl.supabase.co/storage/v1/object/public/images/products/1778944571819-493.png",
+      "gallery_urls": [],
+      "in_stock": true,
+      "created_at": "2026-05-16T15:16:48.347Z"
+    }
+  ],
+  "orders": [
+    {
+      "id": 5000,
+      "user_id": "48cb4137-a710-4d7c-9757-8a0859f2edfe",
+      "total_amount": 25220,
+      "status": "pending",
+      "items": [
+        {
+          "product_id": 1000,
+          "quantity": 1,
+          "price": 24000
+        }
+      ],
+      "shipping_address": {
+        "fullName": "Muhammad Farhan",
+        "phoneNumber": "+923260173310",
+        "address": "https://www.linkedin.com/in/muhammad-farhann-/",
+        "city": "Faisalabad",
+        "postalCode": "37000",
+        "full_address": "https://www.linkedin.com/in/muhammad-farhann-/, Faisalabad, 37000"
+      },
+      "created_at": "2026-05-16T15:19:00.763Z",
+      "is_local": true
+    }
+  ]
+}

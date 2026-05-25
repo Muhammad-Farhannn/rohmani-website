@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary": "#615e57",
+            "inverse-primary": "#cbc6bd",
+            "surface-tint": "#615e57",
+            "on-secondary-fixed": "#231919",
+            "on-secondary": "#ffffff",
+            "on-tertiary-fixed": "#241a00",
+            "inverse-on-surface": "#f2f0f0",
+            "error": "#ba1a1a",
+            "surface-dim": "#dbd9d9",
+            "secondary-fixed-dim": "#d5c2c2",
+            "surface-bright": "#fbf9f8",
+            "tertiary": "#735c00",
+            "secondary-container": "#eedbdb",
+            "inverse-surface": "#303030",
+            "on-error-container": "#93000a",
+            "on-surface": "#1b1c1c",
+            "on-secondary-fixed-variant": "#504444",
+            "on-surface-variant": "#49463f",
+            "secondary": "#695b5b",
+            "surface-container-lowest": "#ffffff",
+            "on-error": "#ffffff",
+            "secondary-fixed": "#f1dede",
+            "surface-container-highest": "#e4e2e2",
+            "on-secondary-container": "#6d5f5f",
+            "on-tertiary-fixed-variant": "#574500",
+            "outline-variant": "#cbc6bc",
+            "tertiary-container": "#ffeec6",
+            "on-primary-fixed-variant": "#494640",
+            "tertiary-fixed-dim": "#e9c349",
+            "on-primary-container": "#706c65",
+            "on-background": "#1b1c1c",
+            "on-primary": "#ffffff",
+            "primary-fixed": "#e7e2d9",
+            "surface-container": "#efeded",
+            "primary-container": "#f5efe6",
+            "outline": "#7b776e",
+            "on-tertiary": "#ffffff",
+            "surface-variant": "#e4e2e2",
+            "background": "#fbf9f8",
+            "error-container": "#ffdad6",
+            "primary-fixed-dim": "#cbc6bd",
+            "tertiary-fixed": "#ffe088",
+            "surface": "#fbf9f8",
+            "on-primary-fixed": "#1d1b16",
+            "surface-container-low": "#f5f3f3",
+            "surface-container-high": "#eae8e7",
+            "on-tertiary-container": "#846900"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "margin-edge": "64px",
+            "unit-sm": "8px",
+            "element-gap": "16px",
+            "unit-lg": "32px",
+            "section-gap": "120px",
+            "container-max": "1440px",
+            "gutter": "24px",
+            "unit-xs": "4px",
+            "unit-md": "16px"
+          },
+          "fontFamily": {
+            "body-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Noto Serif"],
+            "headline-sm": ["Noto Serif"],
+            "display-lg": ["Noto Serif"],
+            "label-caps": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+            "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+            "headline-md": ["32px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "400"}],
+            "headline-sm": ["24px", {"lineHeight": "1.3", "fontWeight": "400"}],
+            "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+            "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      font-size: 20px;
+    }
+    .product-card-overlay {
+      background: rgba(251, 249, 248, 0.85);
+      backdrop-filter: blur(4px);
+      opacity: 0;
+      transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .product-card:hover .product-card-overlay {
+      opacity: 1;
+    }
+    .hover-gold-underline::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: #D4AF37;
+      transition: width 0.4s ease;
+    }
+    .hover-gold-underline:hover::after {
+      width: 100%;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-tertiary-container selection:text-on-tertiary-container">
+<!-- Top Navigation Bar -->
+<nav class="sticky top-0 w-full z-50 bg-[#FCF9F6]/95 dark:bg-stone-950/95 backdrop-blur-sm border-b-[0.5px] border-stone-200 dark:border-stone-800 shadow-sm shadow-stone-200/10 dark:shadow-none ease-in-out transition-all duration-500">
+<div class="flex justify-between items-center w-full px-8 md:px-16 py-6">
+<!-- Brand Logo -->
+<a class="text-2xl font-serif tracking-[0.2em] uppercase text-stone-900 dark:text-stone-50" href="#">
+        Rohmani By Bin Arif Textiles
+      </a>
+<!-- Desktop Nav Links -->
+<div class="hidden lg:flex items-center space-x-12">
+<a class="font-serif tracking-widest uppercase text-xs md:text-sm text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 transition-colors duration-500" href="#">Home</a>
+<a class="font-serif tracking-widest uppercase text-xs md:text-sm text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 transition-colors duration-500" href="#">New Arrivals</a>
+<a class="font-serif tracking-widest uppercase text-xs md:text-sm text-stone-900 dark:text-stone-50 border-b border-[#D4AF37] pb-1" href="#">Collections</a>
+<a class="font-serif tracking-widest uppercase text-xs md:text-sm text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 transition-colors duration-500" href="#">Sale</a>
+<a class="font-serif tracking-widest uppercase text-xs md:text-sm text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 transition-colors duration-500" href="#">Contact</a>
+</div>
+<!-- Action Icons -->
+<div class="flex items-center space-x-6">
+<button class="hover:opacity-70 transition-opacity duration-300">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="hover:opacity-70 transition-opacity duration-300">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+<button class="hover:opacity-70 transition-opacity duration-300 relative">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-tertiary text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">2</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="max-w-screen-2xl mx-auto px-8 md:px-16 pt-unit-lg pb-section-gap">
+<!-- Hero Header -->
+<header class="mb-unit-lg text-center md:text-left">
+<h1 class="font-display-lg text-display-lg text-primary mb-unit-sm">The Heritage Collection</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+        A curated selection of artisanal Pakistani textiles, hand-embroidered with precision and woven with centuries of heritage. Experience quiet luxury through every thread.
+      </p>
+</header>
+<!-- Filters and Sort Bar -->
+<div class="flex flex-col lg:flex-row justify-between items-start lg:items-center py-6 border-y border-outline-variant gap-unit-md mb-unit-lg">
+<div class="flex flex-wrap gap-element-gap items-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Filter by:</span>
+<div class="relative group">
+<button class="px-4 py-2 bg-surface-container-low border border-outline-variant font-label-caps text-label-caps flex items-center gap-2 hover:bg-surface-container transition-colors">
+            Category <span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+<div class="relative group">
+<button class="px-4 py-2 bg-surface-container-low border border-outline-variant font-label-caps text-label-caps flex items-center gap-2 hover:bg-surface-container transition-colors">
+            Fabric <span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+<div class="relative group">
+<button class="px-4 py-2 bg-surface-container-low border border-outline-variant font-label-caps text-label-caps flex items-center gap-2 hover:bg-surface-container transition-colors">
+            Color <span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+<div class="relative group">
+<button class="px-4 py-2 bg-surface-container-low border border-outline-variant font-label-caps text-label-caps flex items-center gap-2 hover:bg-surface-container transition-colors">
+            Price Range <span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+</div>
+<div class="flex items-center gap-element-gap w-full lg:w-auto justify-between lg:justify-start">
+<p class="font-label-caps text-label-caps text-on-surface-variant">24 Products</p>
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Sort:</span>
+<select class="bg-transparent border-none focus:ring-0 font-label-caps text-label-caps text-primary cursor-pointer p-0">
+<option>Newest Arrivals</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Featured</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-gutter gap-y-section-gap">
+<!-- Product Card 1 -->
+<div class="product-card group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low mb-unit-md">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A luxurious Pakistani formal ensemble featuring intricate cream-colored embroidery on a soft, blush-pink silk fabric. The lighting is soft and golden, highlighting the delicate textures and fine threadwork. The setting is a minimalist, ivory-toned studio that emphasizes quiet luxury and high-fashion elegance, reflecting a serene and exclusive aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWSJkgOMNQcxB23wGvoZA24-fHWy1miwFy8S-DWusLUW7poLC5blz0X7ZZitQTf7eE6ZyquUmoHsLfyBZU5C0KkKcjS31IH5N1Zh0_Lq4qW6NnAfz_108PkhWrqppHRxKWnTjPysSra4FPowOKPh6PJ8kg3TdtKpV_D1GgdD07oBpxCk8Nq2lgd4Ga1No_hGdIENXcH6uCwEIfsS4oQC9VH43PDJozJSGQVA0f0Mk25jLFrcWYAo9zzg11gg5U5RT7c6Ggjc8AkRIy"/>
+<div class="product-card-overlay absolute inset-0 flex flex-col items-center justify-end p-6">
+<div class="w-full space-y-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<button class="w-full bg-primary text-white py-3 font-label-caps text-label-caps hover:bg-surface-tint transition-colors">Add to Cart</button>
+<button class="w-full bg-white text-primary border border-primary py-3 font-label-caps text-label-caps hover:bg-primary-fixed transition-colors">Quick View</button>
+</div>
+</div>
+</div>
+<div class="text-center">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-1">Zarin Embroidered Silk</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">$245.00</p>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="product-card group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low mb-unit-md">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A close-up shot of hand-woven Pashmina textile in a soft sage green hue, showcasing the fine grain and artisanal craftsmanship. The lighting is diffused and natural, casting subtle shadows that define the drape of the fabric. The overall mood is sophisticated and tranquil, echoing the minimalist luxury of high-end traditional Pakistani fashion." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlfAAo5SsFBO_I3i1StSCH7ve0GI7h2nwBWYltPDkzvSw64a55aPaKI-PysMi5lS8_R6renz1L-F5U1ox7vzJiQ8YJ5SQ080SsL5ph5EwI6KXzc8HfhkwcGfYdLB_ZgVID43zwQwJIqOR91dcnURk9iEy7hIoTBhkZVfYcE_Vi-hho5M9YVyBIxLxoPeri5n7CLb4x8tkEh7H_bQ9PQkDUjJLTZ5RaBeUBS0ziYTwcvM7Tu2AITDFQ0ZlESA5OdcnUz5nNic8caHdx"/>
+<div class="product-card-overlay absolute inset-0 flex flex-col items-center justify-end p-6">
+<div class="w-full space-y-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<button class="w-full bg-primary text-white py-3 font-label-caps text-label-caps hover:bg-surface-tint transition-colors">Add to Cart</button>
+<button class="w-full bg-white text-primary border border-primary py-3 font-label-caps text-label-caps hover:bg-primary-fixed transition-colors">Quick View</button>
+</div>
+</div>
+</div>
+<div class="text-center">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-1">Sage Pashmina Wrap</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">$180.00</p>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="product-card group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low mb-unit-md">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An elegant long-form tunic made of sheer organza with gold-thread motifs, displayed against a soft beige marble background. The high-key lighting enhances the shimmer of the gold thread against the delicate fabric. The composition is asymmetrical and modern, representing a contemporary take on heritage Pakistani couture with a focus on negative space and editorial visual style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaIU4o_gkrgFYqsyqeg36Lkoovk01kpHBC-JuWFmxPTeQZh0YwyAjjKA15ru3q9fDT3KD8xTxkAJ8uplEYV9rbQ65WQDwFdKQg40DajLrHUEcfT-OmLvDfw5JygWJogjVuQ3JSDtkK8FooNy9ZI4DuV-mtoINQSPVUH48D8LIdnaKRxK6xXj_0_5mjNXQyd-u8WkBuzr5rm9BX1UdnPd2WVG9y1nuLJvOM9guuff8oltNLwX8-SZXavwbFofFuJ6qLDNtQbIygIPI5"/>
+<div class="product-card-overlay absolute inset-0 flex flex-col items-center justify-end p-6">
+<div class="w-full space-y-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<button class="w-full bg-primary text-white py-3 font-label-caps text-label-caps hover:bg-surface-tint transition-colors">Add to Cart</button>
+<button class="w-full bg-white text-primary border border-primary py-3 font-label-caps text-label-caps hover:bg-primary-fixed transition-colors">Quick View</button>
+</div>
+</div>
+</div>
+<div class="text-center">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-1">Organza Heritage Tunic</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">$310.00</p>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="product-card group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low mb-unit-md">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A portrait of a model in a sophisticated midnight blue velvet gown with silver 'zardozi' work on the cuffs. The lighting is moody and focused, highlighting the rich texture of the velvet and the sparkle of the silver thread. The overall aesthetic is one of quiet, dark luxury, staying within a muted and tonal color palette that exudes exclusivity and heritage craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBMDpB17TDwmwDcXoehk1h6hfQBNbiNw2hSNdBBSFTf3nYPQ-vh7DnUxyzB086z3xJ1MT9g1AkYwRV6-sE-LPXsXF_9C0UJ2TQoE4Pdpocw47wsX212bTetUxK8Fxb7a4ZsBeOdRqxyJIrD--XQFlZi5NkTvxQJqhAOGSOszeLmooKD9KS6N5zPrgg-J0f330p3aHQUjyXS8rop5R6kklfJjeJx2ObWn6tRyxDjlvBO59CmkEYWQqpMdUewXvPQpyjMPhbuyQGibFu"/>
+<div class="product-card-overlay absolute inset-0 flex flex-col items-center justify-end p-6">
+<div class="w-full space-y-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<button class="w-full bg-primary text-white py-3 font-label-caps text-label-caps hover:bg-surface-tint transition-colors">Add to Cart</button>
+<button class="w-full bg-white text-primary border border-primary py-3 font-label-caps text-label-caps hover:bg-primary-fixed transition-colors">Quick View</button>
+</div>
+</div>
+</div>
+<div class="text-center">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-1">Midnight Velvet Kaftan</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">$450.00</p>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="product-card group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low mb-unit-md">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Soft ethereal white lawn fabric with tonal white-on-white floral embroidery. The shot is captured in bright, natural morning light that creates a clean, pristine, and airy atmosphere. The focus is sharp on the intricate stitch patterns, emphasizing the tactile quality and premium nature of the textile. The background is a simple, off-white textured wall." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWPet1GWRI3_y9PNjI2bCpmc64j7BOiLqV2odBEq0aXNfjEry6GxHaGVVUSlpTSSb9jm21pAiG6UgXnTJHG_TX9S1aq5DACmuwdt8r_Ei2AO5aor2DoB_mKsyWrQgrDV2ze9xR6lKJtFA0-O5L7oZQ9Sb5_GqfyILehkqktHRO1zk8H-HzlWdKBlEhsaJgyaQ-jErcw08iVtTP4bR2-W9klKDk4jXTpLthtwtxBBhHtt5BrZDcSHliodqzKBG3QRmnbZjt6NsB3SJL"/>
+<div class="product-card-overlay absolute inset-0 flex flex-col items-center justify-end p-6">
+<div class="w-full space-y-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<button class="w-full bg-primary text-white py-3 font-label-caps text-label-caps hover:bg-surface-tint transition-colors">Add to Cart</button>
+<button class="w-full bg-white text-primary border border-primary py-3 font-label-caps text-label-caps hover:bg-primary-fixed transition-colors">Quick View</button>
+</div>
+</div>
+</div>
+<div class="text-center">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-1">Pristine White Lawn</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">$125.00</p>
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="product-card group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low mb-unit-md">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A contemporary Pakistani kurta in a deep charcoal linen fabric, styled in a minimalist fashion. The setting is an architectural space with clean lines and soft shadows. The lighting is balanced and directional, highlighting the premium drape of the linen. The palette is strictly monochromatic, echoing the brand's commitment to understated elegance and high-end fashion minimalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW3ZeJc444s-_29ggrkvVfOf9yCeSQT2ebIlFakcPGECLiDmYb8n5KFAz0LAfHMbl7CQpcBSvIZUSvdbN2mkFY0uAOFxuItpEELno_juEE_zNLGIAiRzA8GG4E6gqlPs3bKJ98P49AUQwLkho48_2eWKA4tmpwFLPFf-tPGR6t_0oknYrDDAL-vLU3sv4zjjXSDjhVDOh7wE9phU-UYOz1uXpZwYDjrio7rTxkwyhPXzw8yDDIxOi1v2MTxcGzv-Pl-kCSaf1j21HZ"/>
+<div class="product-card-overlay absolute inset-0 flex flex-col items-center justify-end p-6">
+<div class="w-full space-y-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<button class="w-full bg-primary text-white py-3 font-label-caps text-label-caps hover:bg-surface-tint transition-colors">Add to Cart</button>
+<button class="w-full bg-white text-primary border border-primary py-3 font-label-caps text-label-caps hover:bg-primary-fixed transition-colors">Quick View</button>
+</div>
+</div>
+</div>
+<div class="text-center">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-1">Charcoal Linen Kurta</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">$195.00</p>
+</div>
+</div>
+<!-- Product Card 7 -->
+<div class="product-card group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low mb-unit-md">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Fine jacquard fabric with a subtle gold shimmer, draped elegantly over a wooden pedestal. The lighting is high-key and soft, illuminating the intricate woven patterns and the delicate sheen of the textile. The colors are muted gold and soft cream, creating a sophisticated and expensive visual tone that fits the brand's 'Quiet Luxury' philosophy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbW0QuLZJKgll7hFGdpYYwFiE68XLzf7p1weNp7Wda5V3IGeTrGaDI3am9YI5bVZubuQRCf6-iGLWRr41DjA18lZwXsTREDJA5s7XZ81fUZxjDNiNdjNfGAtkEtZqRQpoC9eEfXW9LQ7T16OROvkRVWh4z3qktBIRfYqDDDhoPuEHSJG7PjL7yoLeAMRScL30N7Hl1xRiQxUns3A8YWylNBkb1xVZ9U-YeRWPdcE7QgbWCWRuAYMlburFcWoj1MrrlSe6eFG_uH5Ll"/>
+<div class="product-card-overlay absolute inset-0 flex flex-col items-center justify-end p-6">
+<div class="w-full space-y-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<button class="w-full bg-primary text-white py-3 font-label-caps text-label-caps hover:bg-surface-tint transition-colors">Add to Cart</button>
+<button class="w-full bg-white text-primary border border-primary py-3 font-label-caps text-label-caps hover:bg-primary-fixed transition-colors">Quick View</button>
+</div>
+</div>
+</div>
+<div class="text-center">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-1">Golden Jacquard Suit</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">$380.00</p>
+</div>
+</div>
+<!-- Product Card 8 -->
+<div class="product-card group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low mb-unit-md">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A stack of hand-dyed cotton fabrics in shades of terracotta, ochre, and muted clay. The lighting is warm and natural, suggesting a craftsman's workshop at golden hour. The textures are rich and tactile, highlighting the organic beauty of artisanal textiles. The composition is clean and orderly, reflecting the balance between traditional craft and modern minimalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoPSkBXHsYKjLAj0Lyc85iuMlNC9nNKr04WS1pL-fCdwN3eFcHU7IDkQ61T4GMup-GBSakFcNKXyU-HwdJif61LwlPxpmuXA5AGqaP4lSvWahSn26iYiiAJIraLsuqzZSgBgI-yR-l4UP0llz27FMTZLy7kdCa33pP5YejQaMiXgetx0ARqE0NNRgqIXkBwWnRNvxKATMBCMSEo-ag9TYKkQ5Y4Vbm8WfpO0LSPoqnZn9vK1jxk1AzYYaXp6GDchuONbqDvjNRUkMD"/>
+<div class="product-card-overlay absolute inset-0 flex flex-col items-center justify-end p-6">
+<div class="w-full space-y-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<button class="w-full bg-primary text-white py-3 font-label-caps text-label-caps hover:bg-surface-tint transition-colors">Add to Cart</button>
+<button class="w-full bg-white text-primary border border-primary py-3 font-label-caps text-label-caps hover:bg-primary-fixed transition-colors">Quick View</button>
+</div>
+</div>
+</div>
+<div class="text-center">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-1">Earth Tones Collection</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">$110.00</p>
+</div>
+</div>
+</div>
+<!-- Pagination / Load More -->
+<div class="mt-section-gap flex flex-col items-center gap-unit-md">
+<button class="px-12 py-4 border border-primary font-label-caps text-label-caps text-primary hover:bg-primary hover:text-white transition-all duration-500 ease-out">
+        Discover More
+      </button>
+<div class="flex items-center gap-4 mt-unit-md">
+<button class="w-10 h-10 flex items-center justify-center border border-outline-variant text-primary hover:bg-surface-container-low">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<span class="font-label-caps text-label-caps">1 / 3</span>
+<button class="w-10 h-10 flex items-center justify-center border border-outline-variant text-primary hover:bg-surface-container-low">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Footer Section -->
+<footer class="w-full border-t-[0.5px] border-stone-200 dark:border-stone-800 bg-[#F5EFE6] dark:bg-stone-900">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 md:px-24 py-20 max-w-screen-2xl mx-auto font-serif text-sm tracking-wide leading-relaxed text-stone-700 dark:text-stone-300">
+<!-- Footer Brand -->
+<div class="md:col-span-1">
+<span class="text-xl font-serif tracking-widest uppercase text-stone-800 dark:text-stone-100 mb-4 block">Rohmani</span>
+<p class="mb-6">Dedicated to preserving the ancestral art of textile making through contemporary design and ethical craftsmanship.</p>
+<div class="flex gap-4">
+<a class="hover:text-stone-900 transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="hover:text-stone-900 transition-colors" href="#"><span class="material-symbols-outlined">camera</span></a>
+<a class="hover:text-stone-900 transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+</div>
+</div>
+<!-- Quick Links -->
+<div>
+<h4 class="font-label-caps text-label-caps text-stone-900 dark:text-stone-100 mb-6 uppercase">Collections</h4>
+<ul class="space-y-3">
+<li><a class="text-stone-500 hover:text-stone-800 hover:translate-x-1 transition-transform duration-300 block" href="#">The Heritage Line</a></li>
+<li><a class="text-stone-500 hover:text-stone-800 hover:translate-x-1 transition-transform duration-300 block" href="#">Summer Lawn 2024</a></li>
+<li><a class="text-stone-500 hover:text-stone-800 hover:translate-x-1 transition-transform duration-300 block" href="#">Bridal Couture</a></li>
+<li><a class="text-stone-500 hover:text-stone-800 hover:translate-x-1 transition-transform duration-300 block" href="#">Ready-to-Wear</a></li>
+</ul>
+</div>
+<!-- Customer Care -->
+<div>
+<h4 class="font-label-caps text-label-caps text-stone-900 dark:text-stone-100 mb-6 uppercase">Assistance</h4>
+<ul class="space-y-3">
+<li><a class="text-stone-500 hover:text-stone-800 hover:translate-x-1 transition-transform duration-300 block" href="#">Shipping &amp; Returns</a></li>
+<li><a class="text-stone-500 hover:text-stone-800 hover:translate-x-1 transition-transform duration-300 block" href="#">Privacy Policy</a></li>
+<li><a class="text-stone-500 hover:text-stone-800 hover:translate-x-1 transition-transform duration-300 block" href="#">Contact Us</a></li>
+<li><a class="text-stone-500 hover:text-stone-800 hover:translate-x-1 transition-transform duration-300 block" href="#">Sustainability</a></li>
+</ul>
+</div>
+<!-- Newsletter -->
+<div>
+<h4 class="font-label-caps text-label-caps text-stone-900 dark:text-stone-100 mb-6 uppercase">Journal</h4>
+<p class="mb-4">Receive invitations to private viewings and seasonal lookbook releases.</p>
+<form class="flex border-b border-stone-400 pb-2">
+<input class="bg-transparent border-none focus:ring-0 text-xs tracking-widest w-full p-0" placeholder="EMAIL ADDRESS" type="email"/>
+<button class="material-symbols-outlined text-stone-900" type="submit">trending_flat</button>
+</form>
+</div>
+</div>
+<!-- Footer Bottom -->
+<div class="px-8 md:px-24 py-8 border-t border-stone-200 dark:border-stone-800 text-center text-[10px] tracking-[0.2em] uppercase text-stone-400">
+      © 2024 Rohmani By Bin Arif Textiles. Impeccable Craft, Timeless Heritage.
+    </div>
+</footer>
+</body></html>

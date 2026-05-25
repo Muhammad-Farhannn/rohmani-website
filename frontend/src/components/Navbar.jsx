@@ -1,0 +1,160 @@
+import { Link, useNavigate, NavLink } from 'react-router-dom';
+import { useState } from 'react';
+import { useCart } from '../context/CartContext';
+import { useAuth } from '../context/AuthContext';
+
+export default function Navbar() {
+  const navigate = useNavigate();
+  const { itemCount } = useCart();
+  const { user } = useAuth();
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      navigate(`/shop?search=${encodeURIComponent(searchQuery)}`);
+      setIsSearchOpen(false);
+    }
+  };
+
+  const navLinkClass = ({ isActive }) => 
+    `transition-all duration-500 pb-1 ${
+      isActive 
+        ? 'text-stone-900 dark:text-stone-50 border-b border-[#D4AF37]' 
+        : 'text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200'
+    }`;
+
+  return (
+    <>
+      <header className="sticky top-0 w-full z-50 bg-[#FCF9F6]/95 dark:bg-stone-950/95 backdrop-blur-sm border-b-[0.5px] border-stone-200 dark:border-stone-800 shadow-sm shadow-stone-200/10 dark:shadow-none transition-all duration-500">
+        <nav className="flex justify-between items-center w-full px-3 sm:px-6 md:px-16 py-3 md:py-6 max-w-[1440px] mx-auto">
+          {/* Mobile Menu Button (Left) */}
+          <button 
+            className="md:hidden flex items-center text-stone-800 dark:text-stone-100 p-1"
+            onClick={() => setIsMenuOpen(true)}
+          >
+            <span className="material-symbols-outlined" style={{fontSize: '22px'}}>menu</span>
+          </button>
+
+          {/* Navigation Links (Left - Desktop) */}
+          <div className="hidden md:flex items-center space-x-8 font-serif tracking-widest uppercase text-xs md:text-sm">
+            <NavLink className={navLinkClass} to="/" end>Home</NavLink>
+            <NavLink className={navLinkClass} to="/shop">New Arrivals</NavLink>
+            <NavLink className={navLinkClass} to="/shop">Collections</NavLink>
+          </div>
+
+          {/* Search Bar Overlay */}
+          {isSearchOpen && (
+            <div className="absolute inset-0 bg-[#FCF9F6] dark:bg-stone-950 z-50 flex items-center px-4 md:px-16 animate-fade-in">
+              <form onSubmit={handleSearch} className="flex-grow flex items-center">
+                <input 
+                  autoFocus
+                  type="text" 
+                  placeholder="SEARCH COLLECTIONS..." 
+                  className="w-full bg-transparent border-none focus:ring-0 font-serif tracking-[0.1em] md:tracking-[0.2em] text-sm md:text-lg uppercase"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
+                <button type="submit" className="ml-2 md:ml-4">
+                  <span className="material-symbols-outlined text-stone-900 dark:text-stone-50" style={{fontSize: '20px'}}>search</span>
+                </button>
+                <button type="button" onClick={() => setIsSearchOpen(false)} className="ml-4 md:ml-8">
+                  <span className="material-symbols-outlined text-stone-400" style={{fontSize: '20px'}}>close</span>
+                </button>
+              </form>
+            </div>
+          )}
+
+          {/* Logo */}
+          <Link to="/" className="flex items-center space-x-1.5 md:space-x-3 outline-none group">
+            {/* Bird Icon */}
+            <div className="overflow-hidden h-8 w-8 md:h-14 md:w-14 relative flex-shrink-0">
+              <img 
+                alt="Bird Icon" 
+                className="absolute left-0 top-0 h-full w-auto max-w-none transition-transform duration-500 group-hover:scale-110 mix-blend-multiply" 
+                src="/logo-rohmani.png"
+                style={{ objectPosition: '0% 50%' }}
+              />
+            </div>
+            {/* Text Logo */}
+            <div className="flex flex-col items-start leading-none">
+              <span className="font-['Pinyon_Script'] text-2xl sm:text-3xl md:text-5xl text-stone-900 dark:text-stone-50 transition-colors duration-500">Rohmani</span>
+              <span className="font-serif text-[7px] sm:text-[8px] md:text-[10px] tracking-[0.2em] md:tracking-[0.3em] uppercase text-stone-500 dark:text-stone-400 mt-0.5">by Bin Arif Textile</span>
+            </div>
+          </Link>
+
+          {/* Trailing Icons (Right) */}
+          <div className="flex items-center space-x-2 sm:space-x-3 md:space-x-6 text-stone-800 dark:text-stone-100">
+            <div className="hidden md:flex items-center space-x-6 font-serif tracking-widest uppercase text-xs">
+              <NavLink className={navLinkClass} to="/shop">Sale</NavLink>
+              <NavLink className={navLinkClass} to="/contact">Contact</NavLink>
+            </div>
+            <div className="flex items-center space-x-1 sm:space-x-2 md:space-x-4">
+              <button onClick={() => setIsSearchOpen(true)} className="hover:opacity-70 transition-opacity duration-300 p-1">
+                <span className="material-symbols-outlined" style={{fontSize: '20px'}}>search</span>
+              </button>
+              <NavLink to={user ? "/dashboard" : "/login"} className={({ isActive }) => `hover:opacity-70 transition-opacity duration-300 p-1 ${isActive ? 'text-stone-900 dark:text-stone-50' : ''}`}>
+                <span className="material-symbols-outlined" style={{fontSize: '20px'}}>person</span>
+              </NavLink>
+              <NavLink to="/cart" className={({ isActive }) => `hover:opacity-70 transition-opacity duration-300 relative block p-1 ${isActive ? 'text-stone-900 dark:text-stone-50' : ''}`}>
+                <span className="material-symbols-outlined" style={{fontSize: '20px'}}>shopping_bag</span>
+                {itemCount > 0 && (
+                  <span className="absolute top-0 right-0 bg-primary text-white text-[9px] w-3.5 h-3.5 rounded-full flex items-center justify-center">
+                    {itemCount}
+                  </span>
+                )}
+              </NavLink>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <MobileMenu 
+        isOpen={isMenuOpen} 
+        onClose={() => setIsMenuOpen(false)} 
+        navLinkClass={navLinkClass} 
+      />
+    </>
+  );
+
+}
+
+{/* Mobile Menu Overlay */}
+const MobileMenu = ({ isOpen, onClose, navLinkClass }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 z-[60] md:hidden">
+      {/* Backdrop */}
+      <div 
+        className="absolute inset-0 bg-black/40 backdrop-blur-sm animate-fade-in"
+        onClick={onClose}
+      />
+      {/* Menu Content */}
+      <div className="absolute top-0 left-0 bottom-0 w-[80%] max-w-sm bg-[#FCF9F6] dark:bg-stone-950 shadow-2xl animate-slide-in-left p-8 flex flex-col">
+        <div className="flex justify-between items-center mb-12">
+          <span className="font-serif tracking-widest uppercase text-xs text-stone-400">Navigation</span>
+          <button onClick={onClose} className="p-2">
+            <span className="material-symbols-outlined text-stone-500">close</span>
+          </button>
+        </div>
+        
+        <nav className="flex flex-col space-y-8 font-serif tracking-[0.2em] uppercase text-sm">
+          <NavLink onClick={onClose} className={navLinkClass} to="/" end>Home</NavLink>
+          <NavLink onClick={onClose} className={navLinkClass} to="/shop">New Arrivals</NavLink>
+          <NavLink onClick={onClose} className={navLinkClass} to="/shop">Collections</NavLink>
+          <NavLink onClick={onClose} className={navLinkClass} to="/shop">Sale</NavLink>
+          <NavLink onClick={onClose} className={navLinkClass} to="/contact">Contact</NavLink>
+        </nav>
+
+        <div className="mt-auto pt-8 border-t border-stone-200 dark:border-stone-800">
+          <p className="text-[10px] text-stone-400 font-serif tracking-widest uppercase">
+            &copy; {new Date().getFullYear()} ROHMANI BY BIN ARIF
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+

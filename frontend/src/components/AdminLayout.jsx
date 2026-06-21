@@ -122,7 +122,7 @@ export default function AdminLayout() {
         {mobileOpen && (
           <div className="fixed inset-0 z-50 md:hidden">
             <div className="absolute inset-0 bg-black/40" onClick={() => setMobileOpen(false)} />
-            <aside className="absolute left-0 top-0 bottom-0 w-72 bg-white p-6 overflow-auto shadow-2xl">
+            <aside className="absolute left-0 top-0 bottom-0 w-72 bg-white p-6 overflow-y-auto shadow-2xl flex flex-col">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
                   <img src="/logo-rohmani.png" alt="Logo" className="h-8 w-auto" />
@@ -130,7 +130,7 @@ export default function AdminLayout() {
                 </div>
                 <button onClick={() => setMobileOpen(false)} className="p-2"><span className="material-symbols-outlined">close</span></button>
               </div>
-              <nav className="flex flex-col space-y-2">
+              <nav className="flex flex-col space-y-2 flex-1">
                 {menuItems.map((item) => (
                   <Link
                     key={item.name}
@@ -147,6 +147,18 @@ export default function AdminLayout() {
                   </Link>
                 ))}
               </nav>
+              <div className="mt-auto pt-4 border-t border-outline-variant">
+                <button
+                  onClick={() => {
+                    setMobileOpen(false);
+                    handleLogout();
+                  }}
+                  className="flex items-center gap-3 w-full px-4 py-3 text-error rounded-lg font-label-caps text-sm hover:bg-error/5 transition-all"
+                >
+                  <span className="material-symbols-outlined text-[20px]">logout</span>
+                  Logout
+                </button>
+              </div>
             </aside>
           </div>
         )}

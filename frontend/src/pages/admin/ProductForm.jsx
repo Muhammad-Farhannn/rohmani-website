@@ -212,9 +212,8 @@ export default function ProductForm() {
                   className="w-full px-4 py-3 bg-surface-container-low border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary outline-none transition-all"
                 >
                   <option value="">Select Category</option>
-                  <option value="Artisan Series">Artisan Series</option>
-                  <option value="Winter Edition">Winter Edition</option>
-                  <option value="Heritage Latha">Heritage Latha</option>
+                  <option value="Stitched">Stitched</option>
+                  <option value="Unstitched">Unstitched</option>
                 </select>
               </div>
               <div className="space-y-2">

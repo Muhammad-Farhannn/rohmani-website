@@ -49,9 +49,9 @@ export default function Home() {
             <h2 className="font-headline-md text-on-surface mb-2">Curated Categories</h2>
             <div className="h-[1px] w-24 bg-tertiary mx-auto"></div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Category Card 1 */}
-            <div className="group relative h-[220px] sm:h-[320px] md:h-[600px] overflow-hidden cursor-pointer">
+            <div className="group relative h-[220px] sm:h-[320px] md:h-[600px] overflow-hidden cursor-pointer" onClick={() => navigate('/shop?category=Unstitched')}>
               <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABZNeC9bRL-cvDdAGkzmoQtLwPUVvxOA3rCvGT8tXJNOmvnCsmjDiXD3pyBUbsZbwlch9z3g0GGsSjND5ddDaytTf7e0Z-SyogKni1ZbaCrqy1U9IOmFy-TswK32qA0ESIaKh_33te7VOqp0MNG-rbRBHSyyywWTk89w0ww1gTsqmibiZS6UihPnyEYj340_qTJFw3S7tn6xjprHEWYfXcHDPz_hb4Yy6f7p8bxfLuDRWYMD9BEZnEQHVEOhv4JXcYw3oXaygEhOKJ" />
               <div className="absolute inset-0 bg-stone-900/10 group-hover:bg-stone-900/30 transition-all duration-500"></div>
               <div className="absolute inset-0 flex flex-col justify-end p-8 text-white">
@@ -60,30 +60,12 @@ export default function Home() {
               </div>
             </div>
             {/* Category Card 2 */}
-            <div className="group relative h-[220px] sm:h-[320px] md:h-[600px] overflow-hidden cursor-pointer md:mt-12">
+            <div className="group relative h-[220px] sm:h-[320px] md:h-[600px] overflow-hidden cursor-pointer md:mt-12" onClick={() => navigate('/shop?category=Stitched')}>
               <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfj73KbDFI_bm4FzUDPlHeLwyxfh7GKSbdva58KvV3NZkq52D3S7n1lFWxYLLm4MNbvhjOPzutqklpZmYrrPLet6q_g_VQYaiIABWKu2eSGqpKm_YJErUbnVGESUquZJMAccZMmT4muZneQIU71raj1HpM0hJzob3ztUHIDQxBaxkIa2zNt8iG9mbSIgb29DRouMiw-dxIoRBkNWxrBiYZYevFU8k0V6wlbRKJmCp1lcQynunVTVFvzN9_q83ZcMEFKaNteT7VOl_D" />
               <div className="absolute inset-0 bg-stone-900/10 group-hover:bg-stone-900/30 transition-all duration-500"></div>
               <div className="absolute inset-0 flex flex-col justify-end p-8 text-white">
-                <h3 className="font-headline-sm mb-4">Pret</h3>
+                <h3 className="font-headline-sm mb-4">Stitched</h3>
                 <p className="font-label-caps text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-500">Ready to Wear</p>
-              </div>
-            </div>
-            {/* Category Card 3 */}
-            <div className="group relative h-[220px] sm:h-[320px] md:h-[600px] overflow-hidden cursor-pointer">
-              <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCY2J8LgGV9hQs-TbhJG6Z0dS2mKeVlxZ8XCQKMaPxAH9CpcQf1Vn-eqJB41vjO-N5SII8f-LXnSrbsYYvlMAowkPjP3XanBf3JGsXvfXgneaM4UPYIZM4ZWALHp__ALP6cmj-Xzn5gKhQ1xHe544SkB3ZpIUF7QLy7yWKYVEFktAqSstng-6JgzxY_npqbYfJhBT5fH4XXmOV_Q0qxa2VEYe5R7G9TYRZby7tMbCTqI6oUiT4inN_bQ8J2_fwRit4Ol1fxmKsho9fi" />
-              <div className="absolute inset-0 bg-stone-900/10 group-hover:bg-stone-900/30 transition-all duration-500"></div>
-              <div className="absolute inset-0 flex flex-col justify-end p-8 text-white">
-                <h3 className="font-headline-sm mb-4">Luxury</h3>
-                <p className="font-label-caps text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-500">Timeless Elegance</p>
-              </div>
-            </div>
-            {/* Category Card 4 */}
-            <div className="group relative h-[220px] sm:h-[320px] md:h-[600px] overflow-hidden cursor-pointer md:mt-12">
-              <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVk-MVpHyWV52d6yv_W0shiAEgZ96oY0tRnJdf880gqZekL1F1L8qQYkcK4TEE9We2kbwtpQkpGPz6crDM4koLYqf60ZdxI-uSee1rhhH3s0OPtROn9DcIqe8vmHr2lxJOTcl4H_Nn7JcRLXZJTQxdwtvcU_Kfp9CECDWYS2X9nv6xH1VPM8BN9lM1PaE9K2_gFNDbLaqa1kEB05FEMMABtvrI-0iXxmESowBbVHL7urgR2mBVJXLB1Zw3a3cW_Imqy3mKPhofc27r" />
-              <div className="absolute inset-0 bg-stone-900/10 group-hover:bg-stone-900/30 transition-all duration-500"></div>
-              <div className="absolute inset-0 flex flex-col justify-end p-8 text-white">
-                <h3 className="font-headline-sm mb-4">Festive</h3>
-                <p className="font-label-caps text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-500">Occasion Wear</p>
               </div>
             </div>
           </div>

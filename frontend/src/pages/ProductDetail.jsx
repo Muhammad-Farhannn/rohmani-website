@@ -126,6 +126,7 @@ export default function ProductDetail() {
               {product.description || "A masterpiece of textile engineering, crafted from 100% long-staple Giza cotton with hand-applied zari embroidery. This ensemble honors the timeless heritage of Bin Arif Textiles through minimalist motifs and a contemporary silhouette."}
             </p>
             <div className="space-y-6">
+              {product.category !== 'Unstitched' && (
               <div>
                 <div className="flex justify-between mb-4">
                   <span className="font-label-caps tracking-widest text-stone-900">SELECT SIZE</span>
@@ -143,6 +144,7 @@ export default function ProductDetail() {
                   ))}
                 </div>
               </div>
+              )}
               <div className="flex gap-4">
                 <div className="flex items-center border border-stone-200 px-4 py-3">
                   <button 

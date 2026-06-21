@@ -15,7 +15,15 @@ export default function Shop() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [filters, setFilters] = useState({ category: '', material: '', color: '', sort: 'Newest Arrivals' });
+  const categoryParam = queryParams.get('category') || '';
+  const [filters, setFilters] = useState({ category: categoryParam, material: '', color: '', sort: 'Newest Arrivals' });
+
+  useEffect(() => {
+    const categoryParam = queryParams.get('category');
+    if (categoryParam !== null && categoryParam !== filters.category) {
+      setFilters(prev => ({ ...prev, category: categoryParam }));
+    }
+  }, [location.search]);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -65,9 +73,8 @@ export default function Shop() {
               className="px-4 py-2 bg-surface-container-low border border-outline-variant font-label-caps text-label-caps focus:ring-primary focus:border-primary"
             >
               <option value="">All Categories</option>
-              <option value="Artisan Series">Artisan Series</option>
-              <option value="Winter Edition">Winter Edition</option>
-              <option value="Heritage Latha">Heritage Latha</option>
+              <option value="Stitched">Stitched</option>
+              <option value="Unstitched">Unstitched</option>
             </select>
 
             <select 

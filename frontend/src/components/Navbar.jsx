@@ -1,4 +1,4 @@
-import { Link, useNavigate, NavLink } from 'react-router-dom';
+import { Link, useNavigate, NavLink, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
@@ -19,12 +19,26 @@ export default function Navbar() {
     }
   };
 
-  const navLinkClass = ({ isActive }) => 
-    `transition-all duration-500 pb-1 ${
+  const location = useLocation();
+
+  const getLinkClass = (path, searchParam = '') => {
+    let isActive = false;
+    if (path === '/shop') {
+      if (searchParam) {
+        isActive = location.pathname === '/shop' && location.search.includes(searchParam);
+      } else {
+        isActive = location.pathname === '/shop' && !location.search;
+      }
+    } else {
+      isActive = location.pathname === path;
+    }
+
+    return `transition-all duration-500 pb-1 ${
       isActive 
         ? 'text-stone-900 dark:text-stone-50 border-b border-[#D4AF37]' 
         : 'text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200'
     }`;
+  };
 
   return (
     <>
@@ -40,9 +54,9 @@ export default function Navbar() {
 
           {/* Navigation Links (Left - Desktop) */}
           <div className="hidden md:flex items-center space-x-8 font-serif tracking-widest uppercase text-xs md:text-sm">
-            <NavLink className={navLinkClass} to="/" end>Home</NavLink>
-            <NavLink className={navLinkClass} to="/shop">New Arrivals</NavLink>
-            <NavLink className={navLinkClass} to="/shop">Collections</NavLink>
+            <Link className={getLinkClass('/')} to="/">Home</Link>
+            <Link className={getLinkClass('/shop', 'Newest')} to="/shop?sort=Newest Arrivals">New Arrivals</Link>
+            <Link className={getLinkClass('/shop')} to="/shop">Collections</Link>
           </div>
 
           {/* Search Bar Overlay */}
@@ -88,8 +102,8 @@ export default function Navbar() {
           {/* Trailing Icons (Right) */}
           <div className="flex items-center space-x-2 sm:space-x-3 md:space-x-6 text-stone-800 dark:text-stone-100">
             <div className="hidden md:flex items-center space-x-6 font-serif tracking-widest uppercase text-xs">
-              <NavLink className={navLinkClass} to="/shop">Sale</NavLink>
-              <NavLink className={navLinkClass} to="/contact">Contact</NavLink>
+              <Link className={getLinkClass('/shop', 'Sale')} to="/shop?category=Sale">Sale</Link>
+              <Link className={getLinkClass('/contact')} to="/contact">Contact</Link>
             </div>
             <div className="flex items-center space-x-1 sm:space-x-2 md:space-x-4">
               <button onClick={() => setIsSearchOpen(true)} className="hover:opacity-70 transition-opacity duration-300 p-1">
@@ -113,7 +127,7 @@ export default function Navbar() {
       <MobileMenu 
         isOpen={isMenuOpen} 
         onClose={() => setIsMenuOpen(false)} 
-        navLinkClass={navLinkClass} 
+        getLinkClass={getLinkClass} 
       />
     </>
   );
@@ -121,7 +135,7 @@ export default function Navbar() {
 }
 
 {/* Mobile Menu Overlay */}
-const MobileMenu = ({ isOpen, onClose, navLinkClass }) => {
+const MobileMenu = ({ isOpen, onClose, getLinkClass }) => {
   if (!isOpen) return null;
 
   return (
@@ -141,11 +155,11 @@ const MobileMenu = ({ isOpen, onClose, navLinkClass }) => {
         </div>
         
         <nav className="flex flex-col space-y-8 font-serif tracking-[0.2em] uppercase text-sm">
-          <NavLink onClick={onClose} className={navLinkClass} to="/" end>Home</NavLink>
-          <NavLink onClick={onClose} className={navLinkClass} to="/shop">New Arrivals</NavLink>
-          <NavLink onClick={onClose} className={navLinkClass} to="/shop">Collections</NavLink>
-          <NavLink onClick={onClose} className={navLinkClass} to="/shop">Sale</NavLink>
-          <NavLink onClick={onClose} className={navLinkClass} to="/contact">Contact</NavLink>
+          <Link onClick={onClose} className={getLinkClass('/')} to="/">Home</Link>
+          <Link onClick={onClose} className={getLinkClass('/shop', 'Newest')} to="/shop?sort=Newest Arrivals">New Arrivals</Link>
+          <Link onClick={onClose} className={getLinkClass('/shop')} to="/shop">Collections</Link>
+          <Link onClick={onClose} className={getLinkClass('/shop', 'Sale')} to="/shop?category=Sale">Sale</Link>
+          <Link onClick={onClose} className={getLinkClass('/contact')} to="/contact">Contact</Link>
         </nav>
 
         <div className="mt-auto pt-8 border-t border-stone-200 dark:border-stone-800">

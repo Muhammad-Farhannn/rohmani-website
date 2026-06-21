@@ -52,8 +52,8 @@ export default function Shop() {
       <main className="max-w-screen-2xl mx-auto px-4 sm:px-8 md:px-16 pt-unit-lg pb-section-gap mt-16">
         {/* Hero Header */}
         <header className="mb-unit-lg text-center md:text-left">
-          <h1 className="font-display-lg text-display-lg text-primary mb-unit-sm">
-            {searchTerm ? `Search Results for "${searchTerm}"` : 'The Heritage Collection'}
+          <h1 className="font-display-lg text-display-lg text-on-surface mb-2">
+            {searchTerm ? `Search Results for "${searchTerm}"` : 'The Rohmani Collection'}
           </h1>
           <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
             {searchTerm 

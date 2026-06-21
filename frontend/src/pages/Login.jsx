@@ -57,7 +57,7 @@ export default function Login() {
       {/* Image Section (Left side on Desktop) */}
       <section className="hidden md:flex md:w-1/2 lg:w-3/5 relative overflow-hidden bg-primary-container">
         <div className="absolute inset-0 z-0">
-          <img className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrK-ZMz0knwR_yprdnCXWsyc-AET37RNPtaragRYAUKz3SVLxFVUw2VI-uul-Y5uC1EufuBsk4w1R-gqy7oWZyim_xJlHaoR0vTRGcuqeaghAw7XZ7O5iHUtLxTBnU87Um9QfQOghcUsLMHQ8PLFg65wnRtITHz1D0Bwcd-1ywiFhDkHWnrUHTngqnXvE9tNnKCp93Cw70BnZJlk7iaLiaq_PMesB_wN9ScKeS8ikfv5Gi33jDjiLXoKB39EmH5pXchm2ClCEEU4h1"/>
+          <img className="w-full h-full object-cover" src="/signup-bg.jpg"/>
         </div>
         <div className="absolute inset-0 bg-stone-900/10 z-10"></div>
         <div className="relative z-20 flex flex-col justify-end p-margin-edge w-full">

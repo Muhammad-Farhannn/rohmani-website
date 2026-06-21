@@ -6,9 +6,8 @@ import { useCart } from '../context/CartContext';
 export default function Cart() {
   const { cartItems, removeFromCart, updateQuantity, cartTotal } = useCart();
 
-  const shipping = cartTotal > 100000 ? 0 : 500;
-  const tax = cartTotal * 0.03;
-  const total = cartTotal + shipping + tax;
+  const shipping = 500;
+  const total = cartTotal + shipping;
 
   return (
     <>
@@ -96,11 +95,7 @@ export default function Cart() {
                   </div>
                   <div className="flex justify-between font-body-md">
                     <span className="text-on-surface-variant">Shipping</span>
-                    <span className="text-on-surface">{shipping === 0 ? 'FREE' : `PKR ${shipping}`}</span>
-                  </div>
-                  <div className="flex justify-between font-body-md">
-                    <span className="text-on-surface-variant">Tax Estimate (3%)</span>
-                    <span className="text-on-surface">PKR {tax.toLocaleString()}</span>
+                    <span className="text-on-surface">PKR {shipping}</span>
                   </div>
                 </div>
                 <div className="flex justify-between items-center mb-10">

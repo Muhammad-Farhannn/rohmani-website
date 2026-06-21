@@ -83,20 +83,6 @@ export default function ProductDetail() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
           {/* Gallery Section */}
           <div className="lg:col-span-7 flex flex-col md:flex-row gap-4 h-auto md:h-[800px]">
-            <div className="hidden md:flex flex-col gap-4 w-24 overflow-y-auto no-scrollbar">
-              <div className="aspect-[3/4] border border-stone-200 cursor-pointer overflow-hidden opacity-100">
-                <img className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKLWc8g_YPC-GybB1trjDUaTeJCM5hCGYgwyt9i52X3_uaTLA0rtf8LrPR-D3nyBN7EM2JX7woBmInQB5jo8ES2BtdK-8IWKsr-96cT6-q03PfN_dsaSsu-8yDwG2T2aZTS2cZu7RY2jwBSczizXhkFYHWyvbYN8qgZeEjMkaRhOAaFZJ8rYgFBZTErPo6wbq6r5ArnTfy0s9XslJ8dEO7xxqJLGX1axJCTBkgZIz3ukKxSOBkIxVY5WscOep1WeJjsuTcZ3YDqVhh"/>
-              </div>
-              <div className="aspect-[3/4] border border-stone-100 cursor-pointer overflow-hidden opacity-60 hover:opacity-100 transition-opacity">
-                <img className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbxPapFg8TMWJmFAUCgnP1mPKmGhte4HCQKEaztDbIC_pdAmrHxzCkMFWgi5RYaAyKtSLchOKHHSL3EKYy_iueqhp40DOkWMH2Gr9G6rYqyJN7YhXLCkFsfACVvdjFW43PF2vU6mb1NFxad1sbhaQpOQdkJ3xF9kGhlyhtasKm2TRxHh-H6_TQBc9TmfV045ruFTKqZs6yOH2XHE5B-FxIc-YpM1_OHYbWQbiR_ilp14TcqTl3Ygn08z-5AHkmgz4vAeQzpdGU-FZO"/>
-              </div>
-              <div className="aspect-[3/4] border border-stone-100 cursor-pointer overflow-hidden opacity-60 hover:opacity-100 transition-opacity">
-                <img className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjglIbJvL1rKcd3XnuhebdHfews1j08t7iClll-Ez9f4ReH-NCE8UwDQpoYQgqZnV--t5tPFEcXOgt4kX-P3P-o7zTM04lOVN6zN8Jd0tU4uLNYBYZjf-QTZCcLqUsRkfz--1807xR7chPWwJiuSRSu74tK4MV5H6P2W-6xQUDxhg199eGGAS6agsDDuSVcvoF-g-3X-jC7Ra_Ez9bejART_t7zKSKziCTl63_1edGfnLeZ2O-FN4xjaSa-ZV2jz7i8OHxtXgCLnWc"/>
-              </div>
-              <div className="aspect-[3/4] border border-stone-100 cursor-pointer overflow-hidden opacity-60 hover:opacity-100 transition-opacity">
-                <img className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcVadxjlyr12YDPTiaCp5SyqU9EFZvJLfuouLAeNVMuxWj1klUuW5OVF8TP8Q1w0eVZK7D343EaVSjOlhB_VP02AEmewHy8BDVLF5SJd8Y8UlOOkhReKxBenCMum93WtF_ot9RutrX03HrCJACMjRTctMMTcfY_5QEAibFyDVvhn_ANb-UWxKwroT_w062WVtceXebaFPnWZqE3E_vup4GDZhyyNgovJIsUwo3kg9vgVrT5EJihGpIwm4qphmXst-2fVyweg3xNIhp"/>
-              </div>
-            </div>
             <div className="flex-1 aspect-[3/4] md:aspect-auto overflow-hidden relative group">
               <img className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 cursor-zoom-in" src={product.image_url || "https://lh3.googleusercontent.com/aida-public/AB6AXuCcECAT-p8C2BiUQTDJhDdM-0HViJtyrWmYehFEjuhMPQoXEEbJYh959QcEcSvYsHFzTUu79cD5SQflrHgygVYDYq2OJOMzJIlDYHTQn-2APJ5a-Yawm9auX-BmLr1XahjQsazueOMFoL24AHQCnHt8NKrXQOGE-Um0y10OedjwlqGJLtskKeYY7_qagAxgflnb6eYxWns2fWHLSLq9SzcyikZft_MhUnXH7sv_culH6qVggIe3DkmAQdRmeeN6Puw_Ck5w2-a-rP2H"}/>
               <div className="absolute bottom-6 right-6 flex flex-col gap-2">

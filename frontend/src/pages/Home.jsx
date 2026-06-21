@@ -29,12 +29,12 @@ export default function Home() {
         {/* Hero Banner Slider */}
         <section className="relative h-[50vh] sm:h-[60vh] md:h-[870px] w-full overflow-hidden">
           <div className="absolute inset-0">
-            <img className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj6_pdetWQoVxiPAvBC6H7KbfbBUwfSyiH9Kvi1zentD_NTT6svz2QX69R6yCnsNxIeuZiUEtmwJ95WaRYkYJvjPVT-K7PmJUIh59zB33JIiBK56WkIfmeKfQWmrWrn8p2DXUNdLe0ILy1lGnN8Yo3ZqqU3E2pERwagFFMaBda94iMQuB9tlh1qDzMRWbWmpx86ElQNAjhmybr93px1nbrsRrZfIf27Y0ejhoRriEGhsYSvbx-qqV_VjT2pFFkgyj_1ZI4euwna7gp"/>
+            <img className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj6_pdetWQoVxiPAvBC6H7KbfbBUwfSyiH9Kvi1zentD_NTT6svz2QX69R6yCnsNxIeuZiUEtmwJ95WaRYkYJvjPVT-K7PmJUIh59zB33JIiBK56WkIfmeKfQWmrWrn8p2DXUNdLe0ILy1lGnN8Yo3ZqqU3E2pERwagFFMaBda94iMQuB9tlh1qDzMRWbWmpx86ElQNAjhmybr93px1nbrsRrZfIf27Y0ejhoRriEGhsYSvbx-qqV_VjT2pFFkgyj_1ZI4euwna7gp" />
             <div className="absolute inset-0 hero-gradient"></div>
           </div>
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-            <span className="font-label-caps text-white mb-6 tracking-[0.3em] uppercase">Autumn / Winter 2024</span>
-            <h1 className="font-display-lg text-white mb-10 max-w-3xl leading-tight">The Heritage Silk Collection</h1>
+            <span className="font-label-caps text-white mb-6 tracking-[0.3em] uppercase">Summer 2026</span>
+            <h1 className="font-display-lg text-white mb-10 max-w-3xl leading-tight">Latest Designs Every Week</h1>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
               <Link to="/shop" className="bg-stone-900 text-white px-10 py-4 font-label-caps tracking-widest hover:bg-stone-800 transition-all text-center">Shop Collection</Link>
               <button onClick={() => navigate('/shop')} className="border border-white text-white px-10 py-4 font-label-caps tracking-widest hover:bg-white hover:text-stone-900 transition-all">Explore Lookbook</button>
@@ -56,7 +56,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {/* Category Card 1 */}
             <div className="group relative h-[220px] sm:h-[320px] md:h-[600px] overflow-hidden cursor-pointer">
-              <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABZNeC9bRL-cvDdAGkzmoQtLwPUVvxOA3rCvGT8tXJNOmvnCsmjDiXD3pyBUbsZbwlch9z3g0GGsSjND5ddDaytTf7e0Z-SyogKni1ZbaCrqy1U9IOmFy-TswK32qA0ESIaKh_33te7VOqp0MNG-rbRBHSyyywWTk89w0ww1gTsqmibiZS6UihPnyEYj340_qTJFw3S7tn6xjprHEWYfXcHDPz_hb4Yy6f7p8bxfLuDRWYMD9BEZnEQHVEOhv4JXcYw3oXaygEhOKJ"/>
+              <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABZNeC9bRL-cvDdAGkzmoQtLwPUVvxOA3rCvGT8tXJNOmvnCsmjDiXD3pyBUbsZbwlch9z3g0GGsSjND5ddDaytTf7e0Z-SyogKni1ZbaCrqy1U9IOmFy-TswK32qA0ESIaKh_33te7VOqp0MNG-rbRBHSyyywWTk89w0ww1gTsqmibiZS6UihPnyEYj340_qTJFw3S7tn6xjprHEWYfXcHDPz_hb4Yy6f7p8bxfLuDRWYMD9BEZnEQHVEOhv4JXcYw3oXaygEhOKJ" />
               <div className="absolute inset-0 bg-stone-900/10 group-hover:bg-stone-900/30 transition-all duration-500"></div>
               <div className="absolute inset-0 flex flex-col justify-end p-8 text-white">
                 <h3 className="font-headline-sm mb-4">Unstitched</h3>
@@ -65,7 +65,7 @@ export default function Home() {
             </div>
             {/* Category Card 2 */}
             <div className="group relative h-[220px] sm:h-[320px] md:h-[600px] overflow-hidden cursor-pointer md:mt-12">
-              <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfj73KbDFI_bm4FzUDPlHeLwyxfh7GKSbdva58KvV3NZkq52D3S7n1lFWxYLLm4MNbvhjOPzutqklpZmYrrPLet6q_g_VQYaiIABWKu2eSGqpKm_YJErUbnVGESUquZJMAccZMmT4muZneQIU71raj1HpM0hJzob3ztUHIDQxBaxkIa2zNt8iG9mbSIgb29DRouMiw-dxIoRBkNWxrBiYZYevFU8k0V6wlbRKJmCp1lcQynunVTVFvzN9_q83ZcMEFKaNteT7VOl_D"/>
+              <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfj73KbDFI_bm4FzUDPlHeLwyxfh7GKSbdva58KvV3NZkq52D3S7n1lFWxYLLm4MNbvhjOPzutqklpZmYrrPLet6q_g_VQYaiIABWKu2eSGqpKm_YJErUbnVGESUquZJMAccZMmT4muZneQIU71raj1HpM0hJzob3ztUHIDQxBaxkIa2zNt8iG9mbSIgb29DRouMiw-dxIoRBkNWxrBiYZYevFU8k0V6wlbRKJmCp1lcQynunVTVFvzN9_q83ZcMEFKaNteT7VOl_D" />
               <div className="absolute inset-0 bg-stone-900/10 group-hover:bg-stone-900/30 transition-all duration-500"></div>
               <div className="absolute inset-0 flex flex-col justify-end p-8 text-white">
                 <h3 className="font-headline-sm mb-4">Pret</h3>
@@ -74,7 +74,7 @@ export default function Home() {
             </div>
             {/* Category Card 3 */}
             <div className="group relative h-[220px] sm:h-[320px] md:h-[600px] overflow-hidden cursor-pointer">
-              <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCY2J8LgGV9hQs-TbhJG6Z0dS2mKeVlxZ8XCQKMaPxAH9CpcQf1Vn-eqJB41vjO-N5SII8f-LXnSrbsYYvlMAowkPjP3XanBf3JGsXvfXgneaM4UPYIZM4ZWALHp__ALP6cmj-Xzn5gKhQ1xHe544SkB3ZpIUF7QLy7yWKYVEFktAqSstng-6JgzxY_npqbYfJhBT5fH4XXmOV_Q0qxa2VEYe5R7G9TYRZby7tMbCTqI6oUiT4inN_bQ8J2_fwRit4Ol1fxmKsho9fi"/>
+              <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCY2J8LgGV9hQs-TbhJG6Z0dS2mKeVlxZ8XCQKMaPxAH9CpcQf1Vn-eqJB41vjO-N5SII8f-LXnSrbsYYvlMAowkPjP3XanBf3JGsXvfXgneaM4UPYIZM4ZWALHp__ALP6cmj-Xzn5gKhQ1xHe544SkB3ZpIUF7QLy7yWKYVEFktAqSstng-6JgzxY_npqbYfJhBT5fH4XXmOV_Q0qxa2VEYe5R7G9TYRZby7tMbCTqI6oUiT4inN_bQ8J2_fwRit4Ol1fxmKsho9fi" />
               <div className="absolute inset-0 bg-stone-900/10 group-hover:bg-stone-900/30 transition-all duration-500"></div>
               <div className="absolute inset-0 flex flex-col justify-end p-8 text-white">
                 <h3 className="font-headline-sm mb-4">Luxury</h3>
@@ -83,7 +83,7 @@ export default function Home() {
             </div>
             {/* Category Card 4 */}
             <div className="group relative h-[220px] sm:h-[320px] md:h-[600px] overflow-hidden cursor-pointer md:mt-12">
-              <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVk-MVpHyWV52d6yv_W0shiAEgZ96oY0tRnJdf880gqZekL1F1L8qQYkcK4TEE9We2kbwtpQkpGPz6crDM4koLYqf60ZdxI-uSee1rhhH3s0OPtROn9DcIqe8vmHr2lxJOTcl4H_Nn7JcRLXZJTQxdwtvcU_Kfp9CECDWYS2X9nv6xH1VPM8BN9lM1PaE9K2_gFNDbLaqa1kEB05FEMMABtvrI-0iXxmESowBbVHL7urgR2mBVJXLB1Zw3a3cW_Imqy3mKPhofc27r"/>
+              <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVk-MVpHyWV52d6yv_W0shiAEgZ96oY0tRnJdf880gqZekL1F1L8qQYkcK4TEE9We2kbwtpQkpGPz6crDM4koLYqf60ZdxI-uSee1rhhH3s0OPtROn9DcIqe8vmHr2lxJOTcl4H_Nn7JcRLXZJTQxdwtvcU_Kfp9CECDWYS2X9nv6xH1VPM8BN9lM1PaE9K2_gFNDbLaqa1kEB05FEMMABtvrI-0iXxmESowBbVHL7urgR2mBVJXLB1Zw3a3cW_Imqy3mKPhofc27r" />
               <div className="absolute inset-0 bg-stone-900/10 group-hover:bg-stone-900/30 transition-all duration-500"></div>
               <div className="absolute inset-0 flex flex-col justify-end p-8 text-white">
                 <h3 className="font-headline-sm mb-4">Festive</h3>
@@ -116,16 +116,16 @@ export default function Home() {
                 newArrivals.map((product) => (
                   <div key={product.id} className="group">
                     <div className="relative overflow-hidden mb-6 aspect-[3/4] cursor-pointer" onClick={() => navigate(`/product/${product.id}`)}>
-                      <img 
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
-                        src={product.image_url || "https://lh3.googleusercontent.com/aida-public/AB6AXuBWSJkgOMNQcxB23wGvoZA24-fHWy1miwFy8S-DWusLUW7poLC5blz0X7ZZitQTf7eE6ZyquUmoHsLfyBZU5C0KkKcjS31IH5N1Zh0_Lq4qW6NnAfz_108PkhWrqppHRxKWnTjPysSra4FPowOKPh6PJ8kg3TdtKpV_D1GgdD07oBpxCk8Nq2lgd4Ga1No_hGdIENXcH6uCwEIfsS4oQC9VH43PDJozJSGQVA0f0Mk25jLFrcWYAo9zzg11gg5U5RT7c6Ggjc8AkRIy"} 
+                      <img
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        src={product.image_url || "https://lh3.googleusercontent.com/aida-public/AB6AXuBWSJkgOMNQcxB23wGvoZA24-fHWy1miwFy8S-DWusLUW7poLC5blz0X7ZZitQTf7eE6ZyquUmoHsLfyBZU5C0KkKcjS31IH5N1Zh0_Lq4qW6NnAfz_108PkhWrqppHRxKWnTjPysSra4FPowOKPh6PJ8kg3TdtKpV_D1GgdD07oBpxCk8Nq2lgd4Ga1No_hGdIENXcH6uCwEIfsS4oQC9VH43PDJozJSGQVA0f0Mk25jLFrcWYAo9zzg11gg5U5RT7c6Ggjc8AkRIy"}
                         alt={product.name}
                       />
-                      <button 
+                      <button
                         onClick={(e) => {
                           e.stopPropagation();
                           navigate(`/product/${product.id}`);
-                        }} 
+                        }}
                         className="absolute bottom-0 left-0 right-0 bg-stone-900/90 text-white py-4 font-label-caps translate-y-full group-hover:translate-y-0 transition-transform duration-500"
                       >
                         Quick Shop
@@ -146,7 +146,7 @@ export default function Home() {
         {/* Promotional Banner */}
         <section className="relative h-[320px] sm:h-[420px] md:h-[600px] flex items-center overflow-hidden">
           <div className="absolute inset-0">
-            <img className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAumYNuUjhfh2pXjzn719Ta2vm1ex04vsFYIDJ2G-KMu-w-N_IBnf2IqR917B6tYIyw9BNp_jdP5Z3w5nZ2FsO580MVTMQ389eWWTYH2wRnVj_k-SNAd4k2zSnxPOdepwsXtnPKzgk89YGp2TKItRIxG0N-MsAcun1vbSqcvdfr0Va0pa8HBOYyIobU0TwuvahLqsijhtYNilwt3bpEaRrDEmd8CqyZMSKL6K98O5UUoecGe8dR_3rjt3oKHCj4FLNZSifhr7qc5sD3"/>
+            <img className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAumYNuUjhfh2pXjzn719Ta2vm1ex04vsFYIDJ2G-KMu-w-N_IBnf2IqR917B6tYIyw9BNp_jdP5Z3w5nZ2FsO580MVTMQ389eWWTYH2wRnVj_k-SNAd4k2zSnxPOdepwsXtnPKzgk89YGp2TKItRIxG0N-MsAcun1vbSqcvdfr0Va0pa8HBOYyIobU0TwuvahLqsijhtYNilwt3bpEaRrDEmd8CqyZMSKL6K98O5UUoecGe8dR_3rjt3oKHCj4FLNZSifhr7qc5sD3" />
             <div className="absolute inset-0 bg-stone-900/40"></div>
           </div>
           <div className="relative z-10 max-w-screen-2xl mx-auto px-8 md:px-16 w-full text-white">
@@ -167,7 +167,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-12 md:grid-rows-2 gap-6 h-auto">
             <div className="md:col-span-8 md:row-span-2 relative group overflow-hidden h-auto md:h-full">
-              <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ_XSQFSkCcgC8dxSm_uxKAX-9e98SAwEC9GAoi_ZRCWbjUxzk2GdJFbgLytt_o6FUwpLiYnbndcBGp85isWO2efzETAFgjQkmcgOAzano5H3nzhIIbKnh5-Ut9P0VbOo9BWgSfu210iXW5j1hdlc8JQZWqvKVLO1UIu4Gw8GlpWUe3Tg8lv7lBTG0aAVwk7WJP6SPqI4_DoBtNpPpWWyMP6SRM6v9DTjKa1e4OFRDq7n0U81BkymUZ36mUooXbanrEnHZ_ia_Lfo9"/>
+              <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ_XSQFSkCcgC8dxSm_uxKAX-9e98SAwEC9GAoi_ZRCWbjUxzk2GdJFbgLytt_o6FUwpLiYnbndcBGp85isWO2efzETAFgjQkmcgOAzano5H3nzhIIbKnh5-Ut9P0VbOo9BWgSfu210iXW5j1hdlc8JQZWqvKVLO1UIu4Gw8GlpWUe3Tg8lv7lBTG0aAVwk7WJP6SPqI4_DoBtNpPpWWyMP6SRM6v9DTjKa1e4OFRDq7n0U81BkymUZ36mUooXbanrEnHZ_ia_Lfo9" />
               <div className="absolute inset-0 bg-gradient-to-t from-stone-900/60 to-transparent flex flex-col justify-end p-12 text-white">
                 <h3 className="font-display-lg text-3xl mb-4">The Royal Velvet Suite</h3>
                 <p className="font-body-md mb-6 max-w-md">Our signature velvet collection, perfectly balanced for the festive season.</p>
@@ -175,14 +175,14 @@ export default function Home() {
               </div>
             </div>
             <div className="md:col-span-4 md:row-span-1 relative group overflow-hidden h-auto md:h-full">
-              <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX3CEXt3B1cvz31HZ5s9OaOf6NOtyzfc-g36foUMLRMhwFsqtbLt0xU-Rzf3ulxTdEkTYJLLelWf4YyVDwFG6cEH2_HeUW97bMSqJdfoHI9MbCcKZMTi1EodLeBCJwCRuO6GCjl0Yb5RBrNyfAxgiy7wnbdJr1bygP15WUKlM1nD0vY-08SJceqXG7PoTImJgbDZdqPsS-zAOkqTEyz9C8OusaBVqMtBNnIj5XCAPFJx6zmrKPJ4wGb8qLK-YFXPqNimnzdgTJun5p"/>
+              <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX3CEXt3B1cvz31HZ5s9OaOf6NOtyzfc-g36foUMLRMhwFsqtbLt0xU-Rzf3ulxTdEkTYJLLelWf4YyVDwFG6cEH2_HeUW97bMSqJdfoHI9MbCcKZMTi1EodLeBCJwCRuO6GCjl0Yb5RBrNyfAxgiy7wnbdJr1bygP15WUKlM1nD0vY-08SJceqXG7PoTImJgbDZdqPsS-zAOkqTEyz9C8OusaBVqMtBNnIj5XCAPFJx6zmrKPJ4wGb8qLK-YFXPqNimnzdgTJun5p" />
               <div className="absolute inset-0 bg-stone-900/20 group-hover:bg-stone-900/40 transition-all duration-500 flex flex-col justify-end p-8 text-white">
                 <h3 className="font-headline-sm text-lg">Linen Essentials</h3>
                 <button onClick={() => navigate('/shop')} className="w-fit border-b border-white pb-1 font-label-caps mt-2 text-xs">View Collection</button>
               </div>
             </div>
             <div className="md:col-span-4 md:row-span-1 relative group overflow-hidden h-auto md:h-full">
-              <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIGlQKXl7a8tXGhDOemH7HK9aQzJRSEmbZhHTxghewFQP0-6_pGrNLVyq2-zfBD-kVQy_F6vn9XDLPmTNV6PivhSVg8KhGDuy0g00bsTHGSzTeoPmMvjqvqxSxV46w1T8wKnkypltNM5sY9vyvQ9UKYhA9DevgZQgMYXNQgX_0eBY-zBJK-b0_NHwIVvUrYgjqUggQbkM23M70_bQi6hnOIlg8CqHNRvDOyWll8wkpnZuLBCFABnI0C3-bUYMwV7H4gMIN9oAdq_lb"/>
+              <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIGlQKXl7a8tXGhDOemH7HK9aQzJRSEmbZhHTxghewFQP0-6_pGrNLVyq2-zfBD-kVQy_F6vn9XDLPmTNV6PivhSVg8KhGDuy0g00bsTHGSzTeoPmMvjqvqxSxV46w1T8wKnkypltNM5sY9vyvQ9UKYhA9DevgZQgMYXNQgX_0eBY-zBJK-b0_NHwIVvUrYgjqUggQbkM23M70_bQi6hnOIlg8CqHNRvDOyWll8wkpnZuLBCFABnI0C3-bUYMwV7H4gMIN9oAdq_lb" />
               <div className="absolute inset-0 bg-stone-900/20 group-hover:bg-stone-900/40 transition-all duration-500 flex flex-col justify-end p-8 text-white">
                 <h3 className="font-headline-sm text-lg">Seasonal Prints</h3>
                 <button onClick={() => navigate('/shop')} className="w-fit border-b border-white pb-1 font-label-caps mt-2 text-xs">View Collection</button>
@@ -198,7 +198,7 @@ export default function Home() {
             <h2 className="font-display-lg text-on-surface mb-6">Join Our Inner Circle</h2>
             <p className="font-body-md text-on-secondary-fixed-variant mb-10">Be the first to know about our exclusive launches, heritage stories, and private sales. Experience quiet luxury in your inbox.</p>
             <form className="flex flex-col sm:flex-row gap-4" onSubmit={(e) => e.preventDefault()}>
-              <input className="flex-grow bg-transparent border-b border-stone-400 py-3 focus:border-stone-900 transition-colors focus:ring-0 text-stone-900 placeholder-stone-500" placeholder="Your Email Address" type="email"/>
+              <input className="flex-grow bg-transparent border-b border-stone-400 py-3 focus:border-stone-900 transition-colors focus:ring-0 text-stone-900 placeholder-stone-500" placeholder="Your Email Address" type="email" />
               <button className="bg-stone-900 text-white px-12 py-3 font-label-caps tracking-widest hover:bg-stone-800 transition-all">Subscribe</button>
             </form>
           </div>

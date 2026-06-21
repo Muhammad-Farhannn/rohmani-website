@@ -52,7 +52,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Category Card 1 */}
             <div className="group relative h-[220px] sm:h-[320px] md:h-[600px] overflow-hidden cursor-pointer" onClick={() => navigate('/shop?category=Unstitched')}>
-              <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABZNeC9bRL-cvDdAGkzmoQtLwPUVvxOA3rCvGT8tXJNOmvnCsmjDiXD3pyBUbsZbwlch9z3g0GGsSjND5ddDaytTf7e0Z-SyogKni1ZbaCrqy1U9IOmFy-TswK32qA0ESIaKh_33te7VOqp0MNG-rbRBHSyyywWTk89w0ww1gTsqmibiZS6UihPnyEYj340_qTJFw3S7tn6xjprHEWYfXcHDPz_hb4Yy6f7p8bxfLuDRWYMD9BEZnEQHVEOhv4JXcYw3oXaygEhOKJ" />
+              <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="/unstitched-cover.jpg" />
               <div className="absolute inset-0 bg-stone-900/10 group-hover:bg-stone-900/30 transition-all duration-500"></div>
               <div className="absolute inset-0 flex flex-col justify-end p-8 text-white">
                 <h3 className="font-headline-sm mb-4">Unstitched</h3>
@@ -61,7 +61,7 @@ export default function Home() {
             </div>
             {/* Category Card 2 */}
             <div className="group relative h-[220px] sm:h-[320px] md:h-[600px] overflow-hidden cursor-pointer md:mt-12" onClick={() => navigate('/shop?category=Stitched')}>
-              <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfj73KbDFI_bm4FzUDPlHeLwyxfh7GKSbdva58KvV3NZkq52D3S7n1lFWxYLLm4MNbvhjOPzutqklpZmYrrPLet6q_g_VQYaiIABWKu2eSGqpKm_YJErUbnVGESUquZJMAccZMmT4muZneQIU71raj1HpM0hJzob3ztUHIDQxBaxkIa2zNt8iG9mbSIgb29DRouMiw-dxIoRBkNWxrBiYZYevFU8k0V6wlbRKJmCp1lcQynunVTVFvzN9_q83ZcMEFKaNteT7VOl_D" />
+              <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="/stitched-cover.jpg" />
               <div className="absolute inset-0 bg-stone-900/10 group-hover:bg-stone-900/30 transition-all duration-500"></div>
               <div className="absolute inset-0 flex flex-col justify-end p-8 text-white">
                 <h3 className="font-headline-sm mb-4">Stitched</h3>

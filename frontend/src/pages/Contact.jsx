@@ -41,8 +41,8 @@ export default function Contact() {
         {/* Hero Section */}
         <section className="relative h-[240px] sm:h-[320px] md:h-[400px] flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0">
-            <img className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj6_pdetWQoVxiPAvBC6H7KbfbBUwfSyiH9Kvi1zentD_NTT6svz2QX69R6yCnsNxIeuZiUEtmwJ95WaRYkYJvjPVT-K7PmJUIh59zB33JIiBK56WkIfmeKfQWmrWrn8p2DXUNdLe0ILy1lGnN8Yo3ZqqU3E2pERwagFFMaBda94iMQuB9tlh1qDzMRWbWmpx86ElQNAjhmybr93px1nbrsRrZfIf27Y0ejhoRriEGhsYSvbx-qqV_VjT2pFFkgyj_1ZI4euwna7gp" alt="Contact Hero" />
-            <div className="absolute inset-0 bg-stone-900/40"></div>
+            <img className="w-full h-full object-cover" src="/hero-image.png" alt="Contact Hero" />
+            <div className="absolute inset-0 hero-gradient"></div>
           </div>
           <div className="relative z-10 text-center text-white">
             <h1 className="font-display-lg text-display-lg mb-4">Contact Us</h1>

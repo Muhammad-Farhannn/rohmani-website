@@ -29,7 +29,7 @@ export default function Home() {
         {/* Hero Banner Slider */}
         <section className="relative h-[50vh] sm:h-[60vh] md:h-[870px] w-full overflow-hidden">
           <div className="absolute inset-0">
-            <img className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj6_pdetWQoVxiPAvBC6H7KbfbBUwfSyiH9Kvi1zentD_NTT6svz2QX69R6yCnsNxIeuZiUEtmwJ95WaRYkYJvjPVT-K7PmJUIh59zB33JIiBK56WkIfmeKfQWmrWrn8p2DXUNdLe0ILy1lGnN8Yo3ZqqU3E2pERwagFFMaBda94iMQuB9tlh1qDzMRWbWmpx86ElQNAjhmybr93px1nbrsRrZfIf27Y0ejhoRriEGhsYSvbx-qqV_VjT2pFFkgyj_1ZI4euwna7gp" />
+            <img className="w-full h-full object-cover" src="/hero-image.png" />
             <div className="absolute inset-0 hero-gradient"></div>
           </div>
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
@@ -40,11 +40,7 @@ export default function Home() {
               <button onClick={() => navigate('/shop')} className="border border-white text-white px-10 py-4 font-label-caps tracking-widest hover:bg-white hover:text-stone-900 transition-all">Explore Lookbook</button>
             </div>
           </div>
-          <div className="absolute bottom-8 left-0 right-0 flex justify-center space-x-3">
-            <div className="w-12 h-[2px] bg-white"></div>
-            <div className="w-12 h-[2px] bg-white/30"></div>
-            <div className="w-12 h-[2px] bg-white/30"></div>
-          </div>
+
         </section>
 
         {/* Featured Categories Grid */}

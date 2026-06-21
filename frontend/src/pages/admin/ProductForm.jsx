@@ -20,7 +20,9 @@ export default function ProductForm() {
     stock: '',
     featured: false,
     image_url: '',
-    gallery_urls: []
+    gallery_urls: [],
+    material_care: '',
+    shipping_info: ''
   });
   const [loading, setLoading] = useState(false);
   const [uploading, setUploading] = useState(false);
@@ -47,7 +49,9 @@ export default function ProductForm() {
         stock: data.stock || 0,
         featured: data.featured || false,
         image_url: data.image_url || '',
-        gallery_urls: data.gallery_urls || []
+        gallery_urls: data.gallery_urls || [],
+        material_care: data.material_care || '',
+        shipping_info: data.shipping_info || ''
       });
     } catch (error) {
       console.error('Error fetching product:', error);
@@ -165,11 +169,35 @@ export default function ProductForm() {
               <label className="block text-xs font-label-caps text-on-surface-variant uppercase tracking-wider">Description</label>
               <textarea
                 name="description"
-                rows="6"
+                rows="4"
                 value={formData.description}
                 onChange={handleInputChange}
                 className="w-full px-4 py-3 bg-surface-container-low border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary outline-none transition-all resize-none"
                 placeholder="Describe the product details, fabric, and craftsmanship..."
+              />
+            </div>
+
+            <div className="space-y-2">
+              <label className="block text-xs font-label-caps text-on-surface-variant uppercase tracking-wider">Material & Care</label>
+              <textarea
+                name="material_care"
+                rows="3"
+                value={formData.material_care}
+                onChange={handleInputChange}
+                className="w-full px-4 py-3 bg-surface-container-low border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary outline-none transition-all resize-none"
+                placeholder="Details about material and how to care for it..."
+              />
+            </div>
+
+            <div className="space-y-2">
+              <label className="block text-xs font-label-caps text-on-surface-variant uppercase tracking-wider">Shipping Info</label>
+              <textarea
+                name="shipping_info"
+                rows="3"
+                value={formData.shipping_info}
+                onChange={handleInputChange}
+                className="w-full px-4 py-3 bg-surface-container-low border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary outline-none transition-all resize-none"
+                placeholder="Information about shipping and delivery..."
               />
             </div>
 

@@ -16,6 +16,7 @@ export default function ProductDetail() {
   const [selectedSize, setSelectedSize] = useState('M');
   const [isAdded, setIsAdded] = useState(false);
   const [relatedProducts, setRelatedProducts] = useState([]);
+  const [activeTab, setActiveTab] = useState('description');
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -176,17 +177,38 @@ export default function ProductDetail() {
             {/* Tabs */}
             <div className="mt-8 border-t border-stone-100">
               <div className="flex gap-8 border-b border-stone-100">
-                <button className="py-2 md:py-4 border-b border-stone-900 text-[10px] tracking-widest uppercase text-stone-900 font-bold">Description</button>
-                <button className="py-2 md:py-4 text-[10px] tracking-widest uppercase text-stone-400 hover:text-stone-600 transition-colors">Material & Care</button>
-                <button className="py-2 md:py-4 text-[10px] tracking-widest uppercase text-stone-400 hover:text-stone-600 transition-colors">Shipping Info</button>
+                <button 
+                  onClick={() => setActiveTab('description')}
+                  className={`py-2 md:py-4 border-b text-[10px] tracking-widest uppercase transition-colors ${activeTab === 'description' ? 'border-stone-900 text-stone-900 font-bold' : 'border-transparent text-stone-400 hover:text-stone-600'}`}>
+                  Description
+                </button>
+                <button 
+                  onClick={() => setActiveTab('material')}
+                  className={`py-2 md:py-4 border-b text-[10px] tracking-widest uppercase transition-colors ${activeTab === 'material' ? 'border-stone-900 text-stone-900 font-bold' : 'border-transparent text-stone-400 hover:text-stone-600'}`}>
+                  Material & Care
+                </button>
+                <button 
+                  onClick={() => setActiveTab('shipping')}
+                  className={`py-2 md:py-4 border-b text-[10px] tracking-widest uppercase transition-colors ${activeTab === 'shipping' ? 'border-stone-900 text-stone-900 font-bold' : 'border-transparent text-stone-400 hover:text-stone-600'}`}>
+                  Shipping Info
+                </button>
               </div>
-              <div className="py-6 md:py-8">
-                <ul className="space-y-3 text-body-md text-stone-600 list-disc list-inside">
-                  <li>Hand-loomed cotton-silk blend</li>
-                  <li>Zari and Resham hand embroidery</li>
-                  <li>Unstitched 3-piece fabric set</li>
-                  <li>2.5m Kameez, 2.5m Dupatta, 2.25m Trousers</li>
-                </ul>
+              <div className="py-6 md:py-8 min-h-[150px]">
+                {activeTab === 'description' && (
+                  <div className="text-body-md text-stone-600 whitespace-pre-wrap">
+                    {product.description || "A masterpiece of textile engineering, crafted from 100% long-staple Giza cotton with hand-applied zari embroidery."}
+                  </div>
+                )}
+                {activeTab === 'material' && (
+                  <div className="text-body-md text-stone-600 whitespace-pre-wrap">
+                    {product.material_care || "Hand-loomed cotton-silk blend.\nZari and Resham hand embroidery.\nDry clean only."}
+                  </div>
+                )}
+                {activeTab === 'shipping' && (
+                  <div className="text-body-md text-stone-600 whitespace-pre-wrap">
+                    {product.shipping_info || "Standard shipping takes 3-5 business days.\nInternational shipping takes 7-14 business days.\nReturns accepted within 14 days of delivery."}
+                  </div>
+                )}
               </div>
             </div>
           </div>

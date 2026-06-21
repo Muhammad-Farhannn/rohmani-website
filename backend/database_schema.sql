@@ -34,6 +34,8 @@ CREATE TABLE public.products (
   featured BOOLEAN DEFAULT FALSE,
   image_url TEXT,
   gallery_urls TEXT[],
+  material_care TEXT,
+  shipping_info TEXT,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 

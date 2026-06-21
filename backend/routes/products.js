@@ -66,11 +66,11 @@ router.get('/:id', async (req, res) => {
 // Create a new product (Admin Only)
 router.post('/', isAdmin, async (req, res) => {
   try {
-    const { name, description, price, original_price, category, style, color, material, stock, in_stock, featured, image_url, gallery_urls } = req.body;
+    const { name, description, price, original_price, category, style, color, material, stock, in_stock, featured, image_url, gallery_urls, material_care, shipping_info } = req.body;
     
     const { data, error } = await supabase
       .from('products')
-      .insert([{ name, description, price, original_price, category, style, color, material, stock, in_stock, featured, image_url, gallery_urls }])
+      .insert([{ name, description, price, original_price, category, style, color, material, stock, in_stock, featured, image_url, gallery_urls, material_care, shipping_info }])
       .select()
       .single();
 
@@ -85,11 +85,11 @@ router.post('/', isAdmin, async (req, res) => {
 // Update a product (Admin Only)
 router.put('/:id', isAdmin, async (req, res) => {
   try {
-    const { name, description, price, original_price, category, style, color, material, stock, in_stock, featured, image_url, gallery_urls } = req.body;
+    const { name, description, price, original_price, category, style, color, material, stock, in_stock, featured, image_url, gallery_urls, material_care, shipping_info } = req.body;
     
     const { data, error } = await supabase
       .from('products')
-      .update({ name, description, price, original_price, category, style, color, material, stock, in_stock, featured, image_url, gallery_urls })
+      .update({ name, description, price, original_price, category, style, color, material, stock, in_stock, featured, image_url, gallery_urls, material_care, shipping_info })
       .eq('id', req.params.id)
       .select()
       .single();

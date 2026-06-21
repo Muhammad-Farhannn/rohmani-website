@@ -20,9 +20,7 @@ export default function Footer() {
               <span className="font-serif text-[7px] md:text-[8px] tracking-[0.2em] uppercase text-stone-500 dark:text-stone-400">by Bin Arif Textile</span>
             </div>
           </Link>
-          <p className="text-stone-500 dark:text-stone-400 max-w-xs">Rohmani Cloth Since 2024
-            Slogan: Wear Quality, Wear Confidence.
-            Aim: To provide premium ladies and gents stitched & unstitched suits with style, comfort, and trusted quality at affordable prices..</p>
+          <p className="text-stone-500 dark:text-stone-400 max-w-xs">Rohmani Cloth/Since 2024.Wear Quality, Wear Confidence.Our aim is to provide premium ladies & gents stitched & unstitched suits with style, comfort, and trusted quality at affordable prices.</p>
           <div className="flex space-x-4">
             <a href="https://www.instagram.com/rohmanitextile?igsh=MXV4b3d0dDM1aGJmbA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="text-stone-500 hover:text-stone-800 transition-colors">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg>

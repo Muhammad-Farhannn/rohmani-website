@@ -82,11 +82,11 @@ export default function Navbar() {
           )}
 
           {/* Logo */}
-          <Link to="/" className="flex items-center justify-center outline-none group py-2">
-            <div className="h-24 sm:h-32 md:h-48 w-auto flex-shrink-0">
+          <Link to="/" className="flex items-center justify-center outline-none group py-2 relative">
+            <div className="h-10 sm:h-12 md:h-16 w-32 sm:w-40 md:w-48 flex-shrink-0 flex items-center justify-center">
               <img 
                 alt="Rohmani Logo" 
-                className="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-105 mix-blend-multiply" 
+                className="absolute h-[250%] sm:h-[300%] md:h-[350%] w-auto max-w-none object-contain transition-transform duration-500 group-hover:scale-105 mix-blend-multiply pointer-events-none" 
                 src="/logo-rohmani.png"
               />
             </div>

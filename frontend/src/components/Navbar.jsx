@@ -82,20 +82,28 @@ export default function Navbar() {
           )}
 
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-1.5 md:space-x-3 outline-none group">
-            {/* Bird Icon */}
-            <div className="overflow-hidden h-8 w-8 md:h-14 md:w-14 relative flex-shrink-0">
-              <img 
-                alt="Bird Icon" 
-                className="absolute left-0 top-0 h-full w-auto max-w-none transition-transform duration-500 group-hover:scale-110 mix-blend-multiply" 
-                src="/logo-rohmani.png"
-                style={{ objectPosition: '0% 50%' }}
-              />
-            </div>
-            {/* Text Logo */}
-            <div className="flex flex-col items-start leading-none">
-              <span className="font-['Pinyon_Script'] text-2xl sm:text-3xl md:text-5xl text-stone-900 dark:text-stone-50 transition-colors duration-500">Rohmani</span>
-              <span className="font-serif text-[7px] sm:text-[8px] md:text-[10px] tracking-[0.2em] md:tracking-[0.3em] uppercase text-stone-500 dark:text-stone-400 mt-0.5">by Bin Arif Textile</span>
+          <Link to="/" className="flex flex-col items-center justify-center outline-none group relative py-2">
+            <div className="relative flex items-center justify-center">
+              {/* Bird Icon */}
+              <div className="absolute -top-6 -left-4 sm:-top-8 sm:-left-6 md:-top-10 md:-left-8 h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 z-10 flex-shrink-0 pointer-events-none">
+                <img 
+                  alt="Bird Icon" 
+                  className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110 mix-blend-multiply" 
+                  src="/logo-rohmani.png"
+                />
+              </div>
+              {/* Text Logo */}
+              <div className="flex flex-col items-end leading-none relative z-0 pl-6 sm:pl-8 md:pl-10">
+                <span 
+                  className="text-4xl sm:text-5xl md:text-7xl text-stone-900 dark:text-stone-50 transition-colors duration-500" 
+                  style={{ fontFamily: '"Many Weatz", "Pinyon Script", cursive', paddingRight: '0.1em' }}
+                >
+                  Rohmani
+                </span>
+                <span className="font-sans font-black text-[7px] sm:text-[9px] md:text-[11px] tracking-wide text-stone-900 dark:text-stone-100 mt-1 sm:mt-2 pr-2 md:pr-4 uppercase">
+                  By Bin Arif Textile
+                </span>
+              </div>
             </div>
           </Link>
 

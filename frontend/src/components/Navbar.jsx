@@ -86,7 +86,7 @@ export default function Navbar() {
             <div className="h-10 sm:h-12 md:h-16 w-32 sm:w-40 md:w-48 flex-shrink-0 flex items-center justify-center">
               <img 
                 alt="Rohmani Logo" 
-                className="absolute h-[135%] sm:h-[160%] md:h-[180%] w-auto max-w-none object-contain transition-transform duration-500 group-hover:scale-105 mix-blend-multiply pointer-events-none" 
+                className="absolute h-[120%] sm:h-[140%] md:h-[160%] w-auto max-w-none object-contain transition-transform duration-500 group-hover:scale-105 mix-blend-multiply pointer-events-none" 
                 src="/logo-rohmani.png"
               />
             </div>

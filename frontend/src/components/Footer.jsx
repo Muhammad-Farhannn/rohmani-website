@@ -6,18 +6,13 @@ export default function Footer() {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 md:px-24 py-20 max-w-screen-2xl mx-auto font-serif text-sm tracking-wide leading-relaxed">
         {/* Brand Column */}
         <div className="flex flex-col items-start space-y-6">
-          <Link to="/" className="flex items-center space-x-2 outline-none group">
-            <div className="overflow-hidden h-10 md:h-12 w-10 md:w-12 relative">
-              <img
-                alt="Bird Icon"
-                className="absolute left-0 top-0 h-full w-auto max-w-none mix-blend-multiply opacity-90 transition-opacity group-hover:opacity-100"
+          <Link to="/" className="flex items-center outline-none group mb-2">
+            <div className="h-20 md:h-28 w-auto flex-shrink-0">
+              <img 
+                alt="Rohmani Logo" 
+                className="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-105 mix-blend-multiply" 
                 src="/logo-rohmani.png"
-                style={{ objectPosition: '0% 50%' }}
               />
-            </div>
-            <div className="flex flex-col items-start leading-none">
-              <span className="font-['Pinyon_Script'] text-2xl md:text-3xl text-stone-900 dark:text-stone-50">Rohmani</span>
-              <span className="font-serif text-[7px] md:text-[8px] tracking-[0.2em] uppercase text-stone-500 dark:text-stone-400">by Bin Arif Textile</span>
             </div>
           </Link>
           <p className="text-stone-500 dark:text-stone-400 max-w-xs">Rohmani Cloth/Since 2024.Wear Quality, Wear Confidence.Our aim is to provide premium ladies & gents stitched & unstitched suits with style, comfort, and trusted quality at affordable prices.</p>

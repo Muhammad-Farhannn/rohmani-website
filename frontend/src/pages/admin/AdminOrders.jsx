@@ -40,9 +40,28 @@ export default function AdminOrders() {
     }
   };
 
+  const updateOrderStatus = async (orderId, newStatus) => {
+    try {
+      const { error } = await supabase
+        .from('orders')
+        .update({ status: newStatus })
+        .eq('id', orderId);
+
+      if (error) throw error;
+      
+      setOrders(orders.map(order => 
+        order.id === orderId ? { ...order, status: newStatus } : order
+      ));
+    } catch (error) {
+      console.error('Error updating order status:', error);
+      alert('Failed to update order status');
+    }
+  };
+
   const getStatusColor = (status) => {
     switch (status?.toLowerCase()) {
-      case 'completed': return 'bg-green-100 text-green-700';
+      case 'completed': 
+      case 'delivered': return 'bg-green-100 text-green-700';
       case 'pending': return 'bg-yellow-100 text-yellow-700';
       case 'shipped': return 'bg-blue-100 text-blue-700';
       default: return 'bg-gray-100 text-gray-700';
@@ -113,7 +132,25 @@ export default function AdminOrders() {
                     </span>
                   </td>
                   <td className="px-6 py-4 text-right">
-                    <button className="text-primary hover:underline font-label-caps text-[10px]">View Details</button>
+                    <div className="flex flex-col items-end gap-2">
+                      <button className="text-primary hover:underline font-label-caps text-[10px]">View Details</button>
+                      {(!order.status || order.status.toLowerCase() === 'pending') && (
+                        <button 
+                          onClick={() => updateOrderStatus(order.id, 'shipped')}
+                          className="bg-blue-100 text-blue-700 px-2 py-1 rounded text-[10px] font-label-caps uppercase hover:bg-blue-200 transition-colors"
+                        >
+                          Mark Shipped
+                        </button>
+                      )}
+                      {order.status?.toLowerCase() === 'shipped' && (
+                        <button 
+                          onClick={() => updateOrderStatus(order.id, 'delivered')}
+                          className="bg-green-100 text-green-700 px-2 py-1 rounded text-[10px] font-label-caps uppercase hover:bg-green-200 transition-colors"
+                        >
+                          Mark Delivered
+                        </button>
+                      )}
+                    </div>
                   </td>
                 </tr>
               )) : (

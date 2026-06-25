@@ -101,4 +101,30 @@ router.get('/stats', isAdmin, async (req, res) => {
   }
 });
 
+// Update order status
+router.put('/orders/:id/status', isAdmin, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { status } = req.body;
+
+    if (!status) {
+      return res.status(400).json({ error: 'Status is required' });
+    }
+
+    // Update using backend connection to bypass RLS
+    const { data, error } = await supabase
+      .from('orders')
+      .update({ status })
+      .eq('id', id)
+      .select();
+
+    if (error) throw error;
+
+    res.json({ message: 'Order status updated successfully', order: data ? data[0] : null });
+  } catch (error) {
+    console.error('Order status update failure:', error.message);
+    res.status(500).json({ error: 'Failed to update order status', details: error.message });
+  }
+});
+
 export default router;

@@ -82,28 +82,13 @@ export default function Navbar() {
           )}
 
           {/* Logo */}
-          <Link to="/" className="flex flex-col items-center justify-center outline-none group relative py-2">
-            <div className="relative flex items-center justify-center">
-              {/* Bird Icon */}
-              <div className="absolute -top-6 -left-4 sm:-top-8 sm:-left-6 md:-top-10 md:-left-8 h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 z-10 flex-shrink-0 pointer-events-none">
-                <img 
-                  alt="Bird Icon" 
-                  className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110 mix-blend-multiply" 
-                  src="/logo-rohmani.png"
-                />
-              </div>
-              {/* Text Logo */}
-              <div className="flex flex-col items-end leading-none relative z-0 pl-6 sm:pl-8 md:pl-10">
-                <span 
-                  className="text-4xl sm:text-5xl md:text-7xl text-stone-900 dark:text-stone-50 transition-colors duration-500" 
-                  style={{ fontFamily: '"Many Weatz", "Pinyon Script", cursive', paddingRight: '0.1em' }}
-                >
-                  Rohmani
-                </span>
-                <span className="font-sans font-black text-[7px] sm:text-[9px] md:text-[11px] tracking-wide text-stone-900 dark:text-stone-100 mt-1 sm:mt-2 pr-2 md:pr-4 uppercase">
-                  By Bin Arif Textile
-                </span>
-              </div>
+          <Link to="/" className="flex items-center justify-center outline-none group py-2">
+            <div className="h-16 sm:h-20 md:h-28 w-auto flex-shrink-0">
+              <img 
+                alt="Rohmani Logo" 
+                className="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-105 mix-blend-multiply" 
+                src="/logo-rohmani.png"
+              />
             </div>
           </Link>
 
